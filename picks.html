@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选用查询 · WRpedia 2026 秋季赛</title>
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/wrpedia.css">
+</head>
+<body data-page="picks">
+<header class="site-header">
+    <div class="wrap site-header-inner">
+        <div class="brand">
+            <div class="brand-logo">WR</div>
+            <div>
+                <div class="brand-name">WRpedia <span class="tag">· 英雄联盟手游</span></div>
+                <div class="brand-sub">Wild Rift 非官方数据站 · 2026 秋季赛</div>
+            </div>
+        </div>
+        <div class="header-right"><span>独立个人数据站<br>赛果由站主手动录入</span><button type="button" class="btn theme-toggle" data-theme-toggle aria-label="切换亮色模式">亮色模式</button></div>
+    </div>
+    <div class="wrap">
+        <nav class="tabs">
+            <a href="index.html" data-page="overview">Overview / 概览</a>
+            <a href="schedule.html" data-page="schedule">Group Stage / 小组赛</a>
+            <a href="picks.html" data-page="picks">Pick History / 选用查询</a>
+            <a href="stats.html" data-page="stats">Statistics / 数据</a>
+            <a href="patches.html" data-page="patches">Patches / 版本</a>
+        </nav>
+    </div>
+</header>
+
+<main class="wrap page pick-history-page">
+    <div class="page-title"><h1>选用查询</h1><div class="sub">按队伍与英雄交叉筛选，回看每一次选用的完整 BP 与对局结果。</div></div>
+    <section class="pick-filters" aria-label="选用筛选条件">
+        <div class="pick-selects"><label for="pick-team">队伍<select id="pick-team"><option value="all">全部队伍</option></select></label><label for="pick-version">版本<select id="pick-version"><option value="all">全部版本</option><option value="7.2">7.2</option><option value="7.3">7.3</option></select></label></div>
+        <label for="pick-champion-search">英雄</label>
+        <div class="champion-search-row"><input id="pick-champion-search" type="search" placeholder="中文、英文或昵称，如：泰坦、球女、奶龙" autocomplete="off" aria-describedby="pick-search-help"><button type="button" id="clear-pick-search" class="btn">清除</button></div>
+        <p id="pick-search-help" class="scope-note">单一匹配会自动查询；一个昵称对应多位英雄时，请点击选择。选人按上、野、中、下、辅展示，不代表抢选顺序。结果仅包含已录入且已结束的小局。</p>
+        <div id="pick-champion-choices" class="hero-choices" role="group" aria-label="匹配的英雄"></div>
+    </section>
+    <div id="pick-summary" class="stats-summary" aria-live="polite"></div>
+    <div id="pick-results" aria-live="polite"></div>
+</main>
+
+<footer class="footer">
+    WRpedia 是非官方爱好者站点，与 Riot Games 及 Liquipedia 无关。<br>
+    英雄头像与图片版权归 Riot Games 所有，数据仅用于个人学习与展示。
+</footer>
+<script src="data/champions.js"></script>
+<script src="data/champion-locales.js"></script>
+<script src="data/schedule.js"></script>
+<script src="data/champion-rules.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/pick-history.js"></script>
+<script src="assets/js/picks.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.DS_Store
+.netlify/
+dist/
+
+# Historical screenshots; no longer used by the site.
+/wrl/
+
+# Local dependencies, caches and credentials.
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example

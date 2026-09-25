@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Stage · WRpedia 2026 秋季赛</title>
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/wrpedia.css">
+</head>
+<body data-page="schedule">
+<header class="site-header">
+    <div class="wrap site-header-inner">
+        <div class="brand">
+            <div class="brand-logo">WR</div>
+            <div>
+                <div class="brand-name">WRpedia <span class="tag">· 英雄联盟手游</span></div>
+                <div class="brand-sub">Wild Rift 非官方数据站 · 2026 秋季赛</div>
+            </div>
+        </div>
+        <div class="header-right"><span>独立个人数据站<br>赛果由站主手动录入</span><button type="button" class="btn theme-toggle" data-theme-toggle aria-label="切换亮色模式">亮色模式</button></div>
+    </div>
+    <div class="wrap">
+        <nav class="tabs">
+            <a href="index.html" data-page="overview">Overview / 概览</a>
+            <a href="schedule.html" data-page="schedule">Group Stage / 小组赛</a>
+            <a href="picks.html" data-page="picks">Pick History / 选用查询</a>
+            <a href="stats.html" data-page="stats">Statistics / 数据</a>
+            <a href="patches.html" data-page="patches">Patches / 版本</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrap page">
+    <div class="page-title">
+        <h1>Group Stage</h1>
+        <div class="sub">2026 英雄联盟手游超级联赛秋季赛 · 小组赛（8 队双循环 BO3）</div>
+    </div>
+    <div id="demo-notice"></div>
+
+    <div class="content-grid">
+        <div class="main-col">
+            <h2 class="section">Format <span class="muted">（赛制）</span></h2>
+            <div class="panel"><div class="panel-body" id="format-list"></div></div>
+
+            <h2 class="section">Results <span class="muted">（结果 · 积分榜与赛程）</span></h2>
+            <div class="panel">
+                <div class="panel-title">积分榜 <span class="muted">Group Standings</span></div>
+                <div class="table-responsive" id="standings-wrap">
+                    <table class="wikitable striped grouptable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>队伍</th>
+                                <th>大场（胜-负）</th>
+                                <th>小场（胜-负）</th>
+                                <th>小场胜率</th>
+                            </tr>
+                        </thead>
+                        <tbody id="standings-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h2 class="section">赛程 <span class="muted">Match Schedule</span></h2>
+            <div id="matchlist-root"></div>
+        </div>
+
+        <aside>
+            <div class="infobox">
+                <div class="infobox-header">赛事信息</div>
+                <div class="infobox-row"><div class="infobox-label">赛事名称</div><div class="infobox-value">2026 WRL 秋季赛</div></div>
+                <div class="infobox-row"><div class="infobox-label">游戏版本</div><div class="infobox-value" id="meta-patch">7.2（第 1–5 周）<br>7.3（第 6 周起）</div></div>
+                <div class="infobox-row"><div class="infobox-label">参赛队伍</div><div class="infobox-value">8</div></div>
+                <div class="infobox-row"><div class="infobox-label">赛制</div><div class="infobox-value">双循环 BO3 · 双边无畏征召</div></div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer class="footer">
+    WRpedia 是非官方爱好者站点，与 Riot Games 及 Liquipedia 无关。<br>
+    英雄头像与图片版权归 Riot Games 所有，数据仅用于个人学习与展示。
+</footer>
+
+<script src="data/champions.js"></script>
+<script src="data/champion-locales.js"></script>
+<script src="data/schedule.js"></script>
+<script src="data/patches.js"></script>
+<script src="data/champion-rules.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/schedule.js"></script>
+</body>
+</html>
