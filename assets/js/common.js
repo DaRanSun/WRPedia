@@ -61,6 +61,12 @@
     }
 
     const LEAGUE = window.WR_LEAGUE || null;
+    const PLAYERS = window.WR_PLAYERS || [];
+    const PLAYER_INDEX = Object.fromEntries(PLAYERS.map(p => [p.id.toLowerCase(), p]));
+    function getPlayer(id) { return PLAYER_INDEX[String(id || '').toLowerCase()] || null; }
+    function resolvePlayer(teamId, name) {
+        return PLAYERS.find(p => p.teamId === teamId && p.name.toLowerCase() === String(name || '').trim().toLowerCase()) || null;
+    }
     const ROLE_NAMES = Object.freeze({ top: "上单", jungle: "打野", mid: "中路", bot: "下路", support: "辅助" });
     const ROLE_KEYS = Object.keys(ROLE_NAMES);
 
@@ -88,9 +94,11 @@
         let html = '<div class="bans-label">选用 · ' + (ordered ? '按队内选取顺序' : '按分路排列') + '</div><div class="history-picks">';
         (side.picks || []).forEach(function (slug, index) {
             const chosen = selected === slug, shares = pickRoleShares(side, index);
+            const player = getPlayer((side.pickPlayers || [])[index]);
             html += '<div class="history-pick' + (chosen ? ' selected' : '') + '" data-pick-slot="' + (index + 1) + '"><span>' +
                 (ordered ? (index + 1) + '. ' : '') + escapeHtml(roleLabel(shares)) + '</span>' + champImg(slug) +
                 '<b>' + escapeHtml(championName(slug)) + '</b>' + (Object.keys(shares).length === 2 ? '<small>各 50%</small>' : '') +
+                (player ? '<small class="draft-player">' + escapeHtml(player.name) + '</small>' : '') +
                 (chosen ? '<small>查询英雄</small>' : '') + '</div>';
         });
         html += '</div><div class="bans-label">禁用 · 按队内顺位</div><div class="history-bans">';
@@ -105,7 +113,18 @@
 
     function gameMvpLabel(game) {
         const mvp = game.mvp;
-        return mvp && mvp.teamId ? teamName(mvp.teamId) + ' · ' + (ROLE_NAMES[mvp.role] || mvp.role || '未标注分路') : '';
+        const player = mvp && getPlayer(mvp.playerId);
+        return mvp && mvp.teamId ? teamName(mvp.teamId) + ' · ' + (ROLE_NAMES[mvp.role] || mvp.role || '未标注分路') +
+            (player ? '（' + player.name + '）' : '') : '';
+    }
+
+    function gameNotesHtml(game) {
+        const notes = (game.notes || []).slice();
+        (game.substitutions || []).forEach(function (sub) {
+            const before = getPlayer(sub.out), after = getPlayer(sub.in);
+            if (before && after) notes.push('换人 · ' + sub.teamId + ' ' + (ROLE_NAMES[sub.role] || '') + '：' + before.name + ' → ' + after.name);
+        });
+        return notes.length ? '<p class="game-notes">' + notes.map(escapeHtml).join('<br>') + '</p>' : '';
     }
 
     function matchPatch(round, match) {
@@ -247,12 +266,15 @@
 
     function initTabs() {
         const page = document.body.getAttribute("data-page");
+        document.querySelectorAll('[data-site-version]').forEach(el => { el.textContent = 'WRPedia V' + ((window.WR_SITE || {}).version || '1.1.0'); });
         document.querySelectorAll(".tabs a").forEach(function (a) {
             if (a.getAttribute("data-page") === page) a.classList.add("active");
         });
     }
 
+    let dialogTrigger = null;
     function showDialog(html, title) {
+        dialogTrigger = document.activeElement;
         let overlay = document.getElementById("dialog-overlay");
         if (!overlay) {
             overlay = document.createElement("div");
@@ -261,23 +283,37 @@
             overlay.addEventListener("click", function (e) {
                 if (e.target === overlay) hideDialog();
             });
+            overlay.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { e.preventDefault(); hideDialog(); }
+                if (e.key === 'Tab') {
+                    const items = Array.from(overlay.querySelectorAll('button, a[href], select, input, summary, [tabindex="0"]')).filter(el => el.getClientRects().length);
+                    const first = items[0], last = items[items.length - 1];
+                    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+                }
+            });
             document.body.appendChild(overlay);
         }
         overlay.innerHTML =
-            '<div class="dialog"><div class="dialog-header"><span>' + escapeHtml(title || "详情") +
-            '</span><span class="dialog-close" title="关闭">×</span></div>' +
+            '<div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div class="dialog-header"><span id="dialog-title">' + escapeHtml(title || "详情") +
+            '</span><button type="button" class="dialog-close" aria-label="关闭详情">×</button></div>' +
             '<div class="dialog-body">' + html + "</div></div>";
         overlay.querySelector(".dialog-close").addEventListener("click", hideDialog);
         overlay.classList.add("show");
+        overlay.querySelector('.dialog-close').focus();
     }
 
     function hideDialog() {
         const overlay = document.getElementById("dialog-overlay");
         if (overlay) overlay.classList.remove("show");
+        if (dialogTrigger && dialogTrigger.isConnected) dialogTrigger.focus();
     }
 
     window.WR = {
         league: LEAGUE,
+        players: PLAYERS,
+        getPlayer: getPlayer,
+        resolvePlayer: resolvePlayer,
         roleNames: ROLE_NAMES,
         roleShares: roleShares,
         pickRoleShares: pickRoleShares,
@@ -285,6 +321,7 @@
         roleLabel: roleLabel,
         draftSideHtml: draftSideHtml,
         gameMvpLabel: gameMvpLabel,
+        gameNotesHtml: gameNotesHtml,
         matchPatch: matchPatch,
         majorPatch: majorPatch,
         championAvailable: championAvailable,

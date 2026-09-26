@@ -7,6 +7,8 @@ for (const file of ['data/champions.js', 'data/champion-locales.js', 'data/champ
     vm.runInNewContext(fs.readFileSync(path.join(root, file), 'utf8'), ctx, { filename: file });
 }
 const { WR } = ctx.window, plain = x => JSON.parse(JSON.stringify(x)), roles = Object.keys(WR.roleNames);
+// Keep this batch regression fixed to the first four 7.3 games; check_teams covers later batches.
+WR.league.rounds.forEach(r => { if (r.patch === '7.3') r.matches = r.matches.filter(m => ['W6M1', 'W6M2'].includes(m.id)); });
 const all = WR.computeStats(), v72 = WR.computeStats('7.2'), v73 = WR.computeStats('7.3');
 const matches = WR.league.rounds.flatMap(r => r.matches), fp = matches.find(m => m.id === 'W6M1'), kbg = matches.find(m => m.id === 'W6M2');
 const snapshot = JSON.stringify(WR.league);
@@ -14,7 +16,7 @@ assert.deepEqual(plain(fp.games.map(g => [g.length, g.winner, g.team1.side])), [
 assert.deepEqual(plain(kbg.games.map(g => [g.length, g.winner, g.team1.side])), [['14:25', 2, 'blue'], ['16:15', 2, 'blue']]);
 assert.deepEqual(plain(fp.startingLineups), { FP: ['xhao', 'Jiangzhi', 'Soldier', 'lin11', 'Awei'], WHG: ['Zhou', 'Ran', 'Awen', 'spark', 'Tenes'] });
 assert.deepEqual(plain(kbg.startingLineups), { KBG: ['Xzhen', 'DaT', 'Jimeng', 'Xiaoma', 'Uu'], TT: ['Xin', 'Niuniu', 'Z', 'KK', 'qingshan'] });
-assert.deepEqual(plain(fp.games.concat(kbg.games).map(g => g.mvp)), [{ teamId: 'FP', role: 'bot' }, { teamId: 'FP', role: 'jungle' }, { teamId: 'TT', role: 'support' }, { teamId: 'TT', role: 'support' }]);
+assert.deepEqual(plain(fp.games.concat(kbg.games).map(g => ({ teamId: g.mvp.teamId, role: g.mvp.role }))), [{ teamId: 'FP', role: 'bot' }, { teamId: 'FP', role: 'jungle' }, { teamId: 'TT', role: 'support' }, { teamId: 'TT', role: 'support' }]);
 for (const match of [fp, kbg]) for (const game of match.games) {
     assert.equal(game.draftOrder, 'recorded');
     assert.equal(game.mvp.teamId, match['opponent' + game.winner]);

@@ -1,0 +1,96 @@
+/* Teams and player records; uses the shared light/dark palette. */
+.teams-page, .team-page { max-width: 1280px; }
+.clubs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 26px 0; }
+.club-card { display: flex; flex-direction: column; gap: 22px; padding: 26px 22px 18px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-1); color: var(--text); transition: border-color .15s, transform .15s; }
+.club-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-3px); color: var(--text); }
+.club-card:focus-visible, .roster-card:focus-visible, .team-mvp-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.club-logo { display: block; width: 96px; height: 96px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+.club-logo.empty { border: 1px dashed var(--border-strong); background: var(--surface-2); }
+.club-card-name h2 { margin: 0 0 3px; font-size: 27px; letter-spacing: 1px; color: var(--text-strong); }
+.club-card-name > span { color: var(--text-muted); font-size: 12px; }
+.club-card-meta { display: flex; gap: 8px; justify-content: space-between; font-size: 12px; }
+.club-card-meta b { color: var(--text-strong); }
+.club-card-link { display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); color: var(--accent); font-size: 12px; }
+.team-back { display: inline-block; margin-bottom: 20px; }
+.team-hero { display: flex; align-items: center; gap: 24px; padding: 24px; border: 1px solid var(--border-strong); background: var(--surface-1); border-radius: 6px; }
+.team-hero h1 { margin: 4px 0; font-size: 38px; color: var(--text-strong); letter-spacing: 1px; }
+.team-hero p { margin: 0; color: var(--text-muted); }
+.team-switch-label { margin-left: auto; font-size: 12px; color: var(--text-muted); }
+#team-switch { display: block; padding: 9px 24px 9px 12px; margin-top: 5px; background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: 4px; color: var(--text-strong); font: inherit; }
+.team-section-nav { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 15px 0; border-bottom: 1px solid var(--border); }
+.team-page section[id] { scroll-margin-top: 20px; }
+.team-roster { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 16px 0; }
+.roster-card { display: flex; flex-direction: column; gap: 8px; text-align: left; padding: 15px; border: 1px solid var(--border-strong); background: var(--surface-1); border-radius: 5px; color: var(--text); font: inherit; cursor: pointer; min-width: 0; }
+.roster-card[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 -3px var(--accent); background: var(--surface-2); }
+.roster-card > strong { font-size: 19px; color: var(--text-strong); overflow-wrap: anywhere; }
+.roster-card > span { font-size: 11px; }
+.roster-card .roster-position { color: var(--text-muted); }
+.roster-mvp b { color: var(--accent); font-size: 14px; margin-left: 4px; }
+#player-detail { border: 1px solid var(--border-strong); background: var(--surface-1); padding: 22px; border-radius: 5px; }
+.player-detail-heading { display: flex; gap: 16px; justify-content: space-between; align-items: center; }
+.player-detail-heading h3 { font-size: 25px; margin: 4px 0; color: var(--text-strong); }
+.player-detail-heading h3 span { font-size: 14px; font-weight: 400; margin-left: 12px; color: var(--text-muted); }
+.player-detail-heading > span { font-size: 12px; }
+.player-champion-table { width: 100%; margin: 16px 0; }
+.player-champion-table td { vertical-align: middle; }
+.player-champion-table th:first-child { text-align: left; }
+.player-champion-table small { display: block; color: var(--text-muted); font-size: 11px; font-weight: 400; margin-top: 3px; }
+.team-mvp-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+.team-mvp-row { display: grid; grid-template-columns: 20px 1fr 45px 25px; gap: 12px; text-align: left; align-items: center; background: var(--surface-1); border: 1px solid var(--border); padding: 12px 16px; border-radius: 4px; font: inherit; color: var(--text); cursor: pointer; }
+.team-mvp-row b { color: var(--accent); font-size: 18px; text-align: right; }
+.team-mvp-row > span { color: var(--text-muted); font-size: 12px; }
+.team-bans-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.team-ban-panel { border: 1px solid var(--border-strong); padding: 16px; background: var(--surface-1); border-radius: 5px; min-width: 0; }
+.team-ban-panel.blue { border-top: 3px solid var(--blue-border); }
+.team-ban-panel.red { border-top: 3px solid var(--red-border); }
+.team-ban-panel h3 { display: flex; justify-content: space-between; margin: 0 0 14px; font-size: 17px; color: var(--text-strong); }
+.team-ban-panel h3 span { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+.team-ban-table { width: 100%; margin: 0; }
+.team-ban-table th:first-child { text-align: left; }
+.team-ban-table td, .team-ban-table th { font-size: 12px; padding: 9px; }
+.ban-more summary { cursor: pointer; color: var(--link); padding: 12px 0; font-size: 12px; }
+.team-schedule-heading { display: flex; gap: 14px; align-items: center; margin: 20px 0 10px; font-size: 15px; color: var(--text-strong); }
+.team-schedule-heading span { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+.team-schedule-list { border: 1px solid var(--border-strong); border-radius: 5px; overflow: hidden; }
+.team-match { display: grid; grid-template-columns: 1.5fr 1fr 60px 50px 95px; align-items: center; gap: 16px; padding: 14px 18px; color: var(--text); background: var(--surface-1); border-bottom: 1px solid var(--border); }
+.team-match:last-child { border-bottom: 0; }
+.team-match:hover { background: var(--surface-2); text-decoration: none; }
+.team-match time { font-size: 12px; color: var(--text-muted); }
+.team-match time small { display: block; font-size: 10px; }
+.team-match-score { text-align: center; font-weight: 700; padding: 4px 0; border: 1px solid var(--border); border-radius: 4px; color: var(--text-strong); }
+.team-match-score.won { background: var(--bg-up); border-color: var(--bg-up-border); }
+.team-match-score.lost { background: var(--bg-down); border-color: var(--bg-down-border); }
+.team-match-patch, .team-match-link { font-size: 12px; text-align: right; }
+.team-match-link { color: var(--link); }
+@media (max-width: 1020px) {
+    .clubs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .team-roster { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+    .clubs-grid { gap: 12px; }
+    .club-card { padding: 18px 14px 14px; gap: 18px; }
+    .club-logo { width: 68px; height: 68px; }
+    .club-card-name h2 { font-size: 25px; }
+    .club-card-meta { flex-direction: column; }
+    .club-card-link { font-size: 10px; }
+    .team-hero { gap: 14px; padding: 16px; flex-wrap: wrap; }
+    .team-hero h1 { font-size: 30px; }
+    .team-hero p, .team-hero .eyebrow { font-size: 11px; }
+    .team-switch-label { font-size: 11px; }
+    .team-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .roster-card { padding: 12px; }
+    #player-detail { padding: 12px; }
+    .player-detail-heading h3 { font-size: 21px; }
+    .player-detail-heading h3 span { font-size: 12px; display: block; margin: 3px 0 0; }
+    .player-champion-table td, .player-champion-table th { font-size: 12px; padding: 8px 5px; }
+    .player-champion-table .champion-name-button { gap: 5px; font-size: 12px; }
+    .player-champion-table .champ-icon { width: 26px; height: 26px; }
+    .player-champion-table small { font-size: 10px; }
+    .team-mvp-list, .team-bans-grid { grid-template-columns: 1fr; }
+    .team-ban-panel { padding: 12px; }
+    .team-ban-table .champ-icon { width: 24px; height: 24px; }
+    .team-match { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) 46px 34px; gap: 8px; padding: 12px 10px; }
+    .team-match time { font-size: 11px; }
+    .team-match-opponent, .team-match-patch { font-size: 12px; }
+    .team-match-link { display: none; }
+}

@@ -750,6 +750,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .history-bans .champ-icon { width: 26px; height: 26px; }
 .empty-ban { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border: 1px dashed var(--border); color: var(--text-muted); }
 .game-notes { padding: 8px 12px; margin: 0; font-size: 12px; color: var(--text-muted); }
+.history-pick .draft-player { color: var(--text); overflow-wrap: anywhere; }
+.site-release { display: inline-block; margin-bottom: 8px; font-weight: 700; color: var(--text); }
+.dialog-close { border: 0; background: none; color: inherit; font: inherit; font-size: 24px; padding: 0 6px; }
 .pick-game-footer { display: flex; flex-wrap: wrap; gap: 14px; padding: 10px 18px; border-top: 1px solid var(--border); font-size: 12px; }
 .role-tier-panel { scroll-margin-top: 16px; }
 .role-tier-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }

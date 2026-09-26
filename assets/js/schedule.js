@@ -136,7 +136,7 @@
                 WR.draftSideHtml(s.data);
             html += "</div>";
         });
-        html += '</div>' + ((game.notes || []).length ? '<p class="game-notes">' + game.notes.map(WR.escapeHtml).join('<br>') + '</p>' : '') + '</div>';
+        html += '</div>' + WR.gameNotesHtml(game) + '</div>';
         return html;
     }
 
@@ -159,7 +159,7 @@
         if (match.youtube) links += '<a class="link-chip" href="' + WR.escapeHtml(match.youtube) + '" target="_blank" rel="noopener">YouTube</a>';
         if (match.twitch) links += '<a class="link-chip" href="' + WR.escapeHtml(match.twitch) + '" target="_blank" rel="noopener">Twitch</a>';
 
-        let html = '<div class="match-row" data-match="' + WR.escapeHtml(match.id) + '">';
+        let html = '<div class="match-row" id="match-' + WR.escapeHtml(match.id) + '" data-match="' + WR.escapeHtml(match.id) + '">';
         html += '<div class="match-date">' + WR.escapeHtml(match.date || round.date || "") +
             (match.timezone ? "<br><span class='text-muted'>" + WR.escapeHtml(match.timezone) + "</span>" : "") +
             (WR.matchStarted(round, match) ? '<div>' + WR.patchLink(WR.matchPatch(round, match)) + '</div>' : '') + "</div>";
@@ -280,5 +280,12 @@
         renderFormat();
         renderStandings();
         renderMatches();
+        function revealMatch() {
+            const target = document.getElementById(window.location.hash.slice(1));
+            if (target && target.classList.contains('match-row')) {
+                target.classList.add('open'); target.scrollIntoView({ block: 'start' });
+            }
+        }
+        if (window.location) { revealMatch(); window.addEventListener('hashchange', revealMatch); }
     });
 })();

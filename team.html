@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>版本 · WRpedia 2026 秋季赛</title>
+    <title>战队档案 · WRpedia 2026 秋季赛</title>
     <script src="assets/js/theme.js"></script>
     <link rel="stylesheet" href="assets/css/wrpedia.css">
+    <link rel="stylesheet" href="assets/css/teams.css">
 </head>
-<body data-page="patches">
+<body data-page="teams">
 <header class="site-header">
     <div class="wrap site-header-inner">
         <div class="brand">
@@ -31,19 +32,7 @@
     </div>
 </header>
 
-<main class="wrap page patch-page">
-    <div class="page-title">
-        <h1>版本 <span class="title-secondary">Patches</span></h1>
-        <div class="sub">2026 WRL 秋季赛 · 从 7.2c 开始，追踪版本与赛场变化</div>
-    </div>
-    <div class="patch-reading-note">
-        <p><strong>从赛程读懂 BP。</strong>第 1–5 周归入 7.2，第 6 周起归入 7.3。点击赛程中的版本标签，可直接查看对应改动。</p>
-        <p>仅收录常规峡谷英雄、装备、符文、战场与修复；不含符文大乱斗、其他娱乐模式、外观及排位专属系统。普通平衡调整不会重置英雄的 BP 分母。</p>
-    </div>
-    <p class="scope-note">点击版本展开完整改动；每次展开一个版本，再次点击即可收起。</p>
-    <div id="patch-index"></div>
-    <noscript><div class="notice">请启用 JavaScript 以查看本地版本资料。</div></noscript>
-</main>
+<main class="wrap page team-page"><a class="team-back" href="teams.html">← 全部战队</a><div id="team-root"></div></main>
 
 <footer class="footer">
     <span class="site-release" data-site-version></span><br>
@@ -53,12 +42,12 @@
 <script src="data/champions.js"></script>
 <script src="data/champion-locales.js"></script>
 <script src="data/schedule.js"></script>
-<script src="data/patches.js"></script>
-<script src="data/patch-7.3.js"></script>
 <script src="data/champion-rules.js"></script>
 <script src="data/players.js"></script>
 <script src="data/site.js"></script>
 <script src="assets/js/common.js"></script>
-<script src="assets/js/patches.js"></script>
+<script src="assets/js/pick-history.js"></script>
+<script src="assets/js/team-stats.js"></script>
+<script src="assets/js/teams.js"></script>
 </body>
 </html>

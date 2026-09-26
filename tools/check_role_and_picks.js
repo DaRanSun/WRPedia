@@ -62,7 +62,7 @@ console.log('ok: manual formula, lane-only wins, ban allocation, sample guards, 
 
 const actual = WR.computeStats(), snapshot = JSON.stringify(WR.league);
 const historicalRoles = WR.computeStats('7.2').roleTierModel;
-assert.equal(actual.totalGames, 96);
+assert.equal(actual.totalGames, 103);
 assert.ok(Object.values(WR.computeStats('7.3').roleTierModel.roles).every(r => r.rows.every(s => s.status === 'pending')));
 assert.equal(actual.stats.zilean.tier.label, 'OP', 'overall all-ban rating is preserved');
 assert.equal(actual.roleTierModel.roles.support.rows.find(r => r.slug === 'zilean').label, 'OP');
@@ -71,7 +71,7 @@ for (const [slug, role] of Object.entries({ zilean: 'support', alistar: 'support
     const rows = Object.values(actual.roleTierModel.roles).flatMap(r => r.rows).filter(r => r.slug === slug);
     assert.equal(rows.length, 1); assert.equal(rows[0].role, role);
     assert.equal(rows[0].laneBans, actual.stats[slug].bans);
-    assert.equal(rows[0].status, slug === 'zilean' ? 'rated' : 'pending');
+    assert.equal(rows[0].status, ['zilean', 'aurora'].includes(slug) ? 'rated' : 'pending');
 }
 for (const st of Object.values(actual.stats).filter(s => s.bans)) {
     const sum = Object.values(actual.roleTierModel.roles).flatMap(r => r.rows).filter(r => r.slug === st.slug).reduce((n, r) => n + r.laneBans, 0);

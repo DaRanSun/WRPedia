@@ -60,11 +60,11 @@ assert.deepEqual(plain(match.games[1].team2.bans), ['nunu-and-willump', 'xin-zha
 console.log('ok: FP 0–2 TT, both sides, durations, all picks and ordered bans');
 
 const total = WR.computeStats();
-assert.deepEqual(plain(total.patches), [{ id: '7.2c', games: 20 }, { id: '7.2d', games: 34 }, { id: '7.2e', games: 38 }, { id: '7.3', games: 4 }]);
-assert.deepEqual(plain(Object.values(total.stats.syndra.byPatch).map(p => p.picks)), [0, 4, 11, 0]);
+assert.deepEqual(plain(total.patches), [{ id: '7.2c', games: 20 }, { id: '7.2d', games: 34 }, { id: '7.2e', games: 38 }, { id: '7.3', games: 11 }]);
+assert.deepEqual(plain(Object.values(total.stats.syndra.byPatch).map(p => p.picks)), [0, 4, 11, 3]);
 assert.equal(total.stats.syndra.byPatch['7.2d'].available, 31);
 assert.equal(total.stats.syndra.byPatch['7.2e'].available, 27);
-assert.deepEqual(plain(total.stats.syndra.byPatch['7.3']), { picks: 0, bans: 3, wins: 0, losses: 0, available: 4 });
+assert.deepEqual(plain(total.stats.syndra.byPatch['7.3']), { picks: 3, bans: 4, wins: 2, losses: 1, available: 10 });
 for (const st of Object.values(total.stats)) {
     for (const key of ['picks', 'bans', 'wins', 'losses', 'available']) {
         assert.equal(Object.values(st.byPatch).reduce((sum, p) => sum + p[key], 0), st[key], st.slug + ' ' + key);

@@ -17,10 +17,12 @@
                         if (filters.team && filters.team !== "all" && filters.team !== team) return;
                         const pickIndex = (side.picks || []).indexOf(filters.champion);
                         if (pickIndex < 0) return;
+                        const player = WR.getPlayer((side.pickPlayers || [])[pickIndex]);
+                        if (filters.playerId && (!player || player.id !== filters.playerId)) return;
                         const roleShares = WR.pickRoleShares(side, pickIndex);
                         result.push({ round: round, match: match, game: game, gameIndex: gi, team: team,
                             teamIndex: index, pickIndex: pickIndex, roleIndex: pickIndex, roleShares: roleShares, role: WR.roleLabel(roleShares), patch: patch,
-                            won: game.winner === index, champion: filters.champion });
+                            won: game.winner === index, champion: filters.champion, player: player });
                     });
                 });
             });
@@ -49,7 +51,7 @@
             html += WR.draftSideHtml(side, index === record.teamIndex ? record.champion : null) + '</section>';
         });
         html += '</div>';
-        if ((game.notes || []).length) html += '<p class="game-notes">' + game.notes.map(esc).join('<br>') + '</p>';
+        html += WR.gameNotesHtml(game);
         const urls = [['vod', 'VOD'], ['youtube', 'YouTube'], ['twitch', 'Twitch']].filter(link => /^https?:\/\//i.test(match[link[0]] || ''));
         if (urls.length || (match.mvp || []).length) html += '<footer class="pick-game-footer">' +
             ((match.mvp || []).length ? '<span>大场 MVP：' + esc(match.mvp.join('、')) + '</span>' : '') +

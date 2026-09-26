@@ -1,7 +1,10 @@
 # WRpedia · 英雄联盟手游（Wild Rift）独立数据站
 
+当前网站版本：**V1.1.0**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
+
 仿 Liquipedia 风格的《英雄联盟手游》赛事数据站，包含概览及以下页面：
 
+- `teams.html` / `team.html?team=TT` — 战队入口与详情：43 位选手、英雄池与胜率、红蓝方 Ban、队内 MVP、战队赛程
 - `schedule.html` — 小组赛赛程页：赛制说明、8 队双循环积分榜、全部比赛及每小局 BP 详情
 - `stats.html` — 数据统计页：总榜 / 7.2 / 7.3；英雄 BP 梯度、选用/禁用统计、蓝红方胜率、搭档与对手、未上场英雄、比赛时长分布
 - `patches.html` — 版本页：7.2c、7.2d、7.2e、7.3 的常规峡谷改动、赛事重点、装备／符文／战场与官方来源
@@ -95,7 +98,7 @@ window.WR_LEAGUE = {
 - `opponent1/opponent2` 引用 `teams` 里的 `id`。id 一旦被赛程引用就不要改，否则要同步修改所有比赛。
 - 英雄一律使用小写 slug（见 `data/champions.json`），例如 `khazix`、`lee-sin`、`nunu-and-willump`。也可以在浏览器控制台执行 `Object.keys(WR.champions)` 查看全部 slug。
 - 每小局 `picks` / `bans` 各 5 个。未开赛的比赛 `games` 留 `[]` 即可。
-- 当前已内置真实 8 队（TT、FP、RV、KBG、WBG、SS1、WHG、ACE）和已校验的双循环赛程（7 周 × 8 场 = 56 场，主客场各一次）。第 1–5 周全部赛果已录入，共 40 个大场、92 小局；第 6 周新增 2 个大场、4 小局，现共 42 个大场、96 小局；其余赛程待录入。
+- 当前已内置真实 8 队（TT、FP、RV、KBG、WBG、SS1、WHG、ACE）和已校验的双循环赛程（7 周 × 8 场 = 56 场，主客场各一次）。第 1–5 周全部赛果已录入，共 40 个大场、92 小局；第 6 周已录入 5 个大场、11 小局，现共 45 个大场、103 小局；其余赛程待录入。
 - 队伍全名仅按截图中可见信息填写（Weibo Gaming / Radiant Virtue / SS ONE），其余队伍仍为缩写占位，拿到正式队名后改 `teams[].name` 即可。
 
 ## 统计口径（当前实现）
@@ -216,6 +219,20 @@ WRpedia 是非官方爱好者站点，与 Riot Games、Liquipedia 无关。英�
 
 - `game.draftOrder: "recorded"` 表示已录入队内 BP 实际顺序；不是双方交错的全局顺位。
 - `team1/team2.pickRoles`、`banRoles` 与原 picks/bans 数组逐项对齐。位置为 `top/jungle/mid/bot/support`；`["mid", "top"]` 表示各 50%。`null` Ban 与 `null` 分路配对，保留空槽。
-- `startingLineups` 按队伍存储站主提供的首发姓名及原始顺序，不据此猜测选手分路；`game.mvp` 保存 `teamId` 和 `role`。首发信息暂不生成战队或选手榜。
-- W6M1：FP 2–0 WHG，16:51 / 13:36；W6M2：KBG 0–2 TT，14:25 / 16:15。7.3 共 4 小局、40 次选用、39 次实际禁用。
+- `startingLineups` 按队伍存储站主提供的首发姓名及原始顺序。V1.1.0 中，站主已确认其按上、野、中、下、辅排列，具体选手归属与换线格式见下节。
+- 9 月 25 日这批数据：W6M1 为 FP 2–0 WHG，16:51 / 13:36；W6M2 为 KBG 0–2 TT，14:25 / 16:15。本批共 4 小局、40 次选用、39 次实际禁用。
 - 校验新顺序、明确分路、双位置平分、空 Ban、首发与 MVP：`node tools/check_draft_roles.js`。
+
+
+## 战队、选手与 V1.1.0 数据格式
+
+- `data/players.js` 保存 8 队的 43 位选手。稳定 ID 使用队伍和小写选手名；展示名保留惯用大小写。同队 `Niuniu` / `niuniu` 等是同一身份。
+- `match.startingLineups` 名单顺序已确认为上、野、中、下、辅。`side.lineup` 保存每小局常规位置的出场快照，换人后逐局继承，不能由当前全队名单推算历史。
+- `side.pickPlayers` 与 `picks` 一一对应，记录实际操作者；`pickRoles` 只记录局内分路。WHG 在 RV 大场的两次上中换线因此不会改变英雄的操作者归属。
+- `game.substitutions` 保存换人队伍、位置、换下及换上者 ID。TT 对 SS1 第 2 局起，Dawn128 / Xiaobai 替换 Xin / Niuniu，第 3 局沿用。
+- `game.mvp` 保存 `teamId`、`role` 和 `playerId`。此前仅标注分路的 4 次 MVP 已按确认的首发顺序补齐人员。
+- 选手统计只使用已确认的 `pickPlayers`，不使用阵容猜测缺失的历史归属。7.2 队伍赛果和 Ban 可查询，7.2 选手英雄与 MVP 仍待补充。
+- 战队红蓝方禁用率以该队该方实际小局数为分母，表示主动禁用倾向；这与数据页遵循无畏锁定的英雄有效 BP 率不同。
+- 队标仍使用 `data/schedule.js` 的 `teams[].logo` 字段。留空时战队页显示空白预留框，获得授权后填入图片路径即可。
+- 运行 `node tools/check_teams.js` 校验人员归属、换人继承、换线、MVP、选手英雄胜负和小局查询；再运行已有的各项 `tools/check_*.js` 及 `tools/smoke_test.js`。
+- `data/site.js` 是页面显示的网站版本号来源；`CHANGELOG.md` 记录每次更新。数据、功能、整体重做分别递增版本的第三、第二、第一位。

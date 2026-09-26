@@ -82,10 +82,10 @@ check("28 unordered pairs", pairKeys.length === 28);
 check("every pair meets exactly twice", pairKeys.every(k => pairCounts[k].total === 2));
 check("every pair has home and away legs", pairKeys.every(k => pairCounts[k].ab === 1 && pairCounts[k].ba === 1));
 
-// Recorded results: weeks 1–5 and the first two series of week 6.
+// Recorded results: weeks 1–5 and the first five series of week 6.
 const slugs = new Set(window.WR_CHAMPIONS.map(c => c.slug));
 const played = matches.filter(m => (m.games || []).length > 0);
-check("42 matches filled with games (weeks 1–5 plus two week 6 series)", played.length === 42);
+check("45 matches filled with games (weeks 1–5 plus five week 6 series)", played.length === 45);
 check("every game has 5+5 picks and 5+5 bans, valid slugs", played.every(m =>
     m.games.every(g =>
         [g.team1, g.team2].every(t =>
