@@ -59,56 +59,56 @@ window.WR_LEAGUE = {
       "name": "TT",
       "short": "TT",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/1248px-ThunderTalk_Gaming_allmode.png"
     },
     {
       "id": "FP",
       "name": "FP",
       "short": "FP",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/5Power_Gaming_allmode.png"
     },
     {
       "id": "RV",
       "name": "Radiant Virtue",
       "short": "RV",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/Radiant_Virtue_lightmode.png"
     },
     {
       "id": "KBG",
       "name": "KBG",
       "short": "KBG",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/1600px-KeepBest_Gaming_full_allmode.png"
     },
     {
       "id": "WBG",
       "name": "Weibo Gaming",
       "short": "WBG",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/1358px-Weibo_Gaming_full_lightmode.png"
     },
     {
       "id": "SS1",
       "name": "SS ONE",
       "short": "SS1",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/SSONE_allmode.png"
     },
     {
       "id": "WHG",
       "name": "WHG",
       "short": "WHG",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/WHG_Esports_allmode.png"
     },
     {
       "id": "ACE",
       "name": "ACE",
       "short": "ACE",
       "region": "",
-      "logo": ""
+      "logo": "assets/teams/Arrogant_Conquer_Esports_lightmode.png"
     }
   ],
   "rounds": [

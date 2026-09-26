@@ -1,0 +1,65 @@
+WRPedia 战队选手名单
+截至 2026-09-26，共 8 支战队、43 位已录入选手。
+按常规位置列出；姓名大小写差异视为同一选手，以下名单供补充与人员变动核对。
+
+FP（6 人）
+上单：Xiaomai（此前首发）、Xhao（替补）
+打野：Jiangzhi
+中路：Soldier
+下路：lin11
+辅助：Awei
+
+TT（7 人）
+上单：Xin（轮换）、Dawn128（轮换）
+打野：Niuniu（轮换）、Xiaobai（轮换）
+中路：Z
+下路：KK
+辅助：qingshan
+
+KBG（5 人）
+上单：Xzhen
+打野：DaT
+中路：Jimeng
+下路：Xiaoma
+辅助：Uu
+
+WBG（5 人）
+上单：Yuntu
+打野：XiaoG
+中路：SkyFL
+下路：7yun
+辅助：en77
+
+SS1（5 人）
+上单：Meng7
+打野：August
+中路：Yousa
+下路：Yuri
+辅助：Smy
+
+RV（5 人）
+上单：Xzhang
+打野：Huiba
+中路：Anran9
+下路：Berry
+辅助：Tak
+
+WHG（5 人）
+上单：Zhou
+打野：Ran
+中路：Awen
+下路：spark
+辅助：Tenes
+
+ACE（5 人）
+上单：Goddog
+打野：Xs
+中路：ziyu
+下路：Shuangyi
+辅助：Ban
+
+已知轮换与换线说明
+1. FP：Xiaomai 为此前首发上单，Xhao 为替补；目前已录入的 7.3 比赛由 Xhao 出场。
+2. TT：9 月 26 日对 SS1，第 1 局上野为 Xin、Niuniu；第 2 局起依次换为 Dawn128、Xiaobai，第 3 局沿用。
+3. WHG：9 月 26 日对 RV，两局均为 Zhou 使用英雄走中路、Awen 使用英雄走上路，属于局内换线，出场人员未更换。
+4. 其他战队目前没有已录入的轮换信息；如有其他选手或换人，可继续补充。

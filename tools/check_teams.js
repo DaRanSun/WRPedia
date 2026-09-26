@@ -8,7 +8,7 @@ for (const file of ['data/champions.js', 'data/champion-locales.js', 'data/champ
 }
 const WR = ctx.window.WR, plain = value => JSON.parse(JSON.stringify(value)), roles = Object.keys(WR.roleNames);
 const snapshot = JSON.stringify(WR.league), matches = WR.league.rounds.flatMap(r => r.matches), find = id => matches.find(m => m.id === id);
-assert.equal(ctx.window.WR_SITE.version, '1.1.0');
+assert.equal(ctx.window.WR_SITE.version, '1.1.1');
 assert.equal(WR.players.length, 43); assert.equal(new Set(WR.players.map(p => p.id)).size, 43);
 assert.equal(WR.resolvePlayer('FP', 'xhao').id, 'fp-xhao');
 assert.equal(WR.resolvePlayer('TT', 'niuniu').id, 'tt-niuniu');

@@ -266,7 +266,8 @@
 
     function initTabs() {
         const page = document.body.getAttribute("data-page");
-        document.querySelectorAll('[data-site-version]').forEach(el => { el.textContent = 'WRPedia V' + ((window.WR_SITE || {}).version || '1.1.0'); });
+        const siteVersion = (window.WR_SITE || {}).version;
+        document.querySelectorAll('[data-site-version]').forEach(el => { el.textContent = 'WRPedia' + (siteVersion ? ' V' + siteVersion : ''); });
         document.querySelectorAll(".tabs a").forEach(function (a) {
             if (a.getAttribute("data-page") === page) a.classList.add("active");
         });

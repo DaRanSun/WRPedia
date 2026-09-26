@@ -1,6 +1,6 @@
 # WRpedia · 英雄联盟手游（Wild Rift）独立数据站
 
-当前网站版本：**V1.1.0**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
+当前网站版本：**V1.1.1**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
 
 仿 Liquipedia 风格的《英雄联盟手游》赛事数据站，包含概览及以下页面：
 
@@ -233,6 +233,7 @@ WRpedia 是非官方爱好者站点，与 Riot Games、Liquipedia 无关。英�
 - `game.mvp` 保存 `teamId`、`role` 和 `playerId`。此前仅标注分路的 4 次 MVP 已按确认的首发顺序补齐人员。
 - 选手统计只使用已确认的 `pickPlayers`，不使用阵容猜测缺失的历史归属。7.2 队伍赛果和 Ban 可查询，7.2 选手英雄与 MVP 仍待补充。
 - 战队红蓝方禁用率以该队该方实际小局数为分母，表示主动禁用倾向；这与数据页遵循无畏锁定的英雄有效 BP 率不同。
-- 队标仍使用 `data/schedule.js` 的 `teams[].logo` 字段。留空时战队页显示空白预留框，获得授权后填入图片路径即可。
+- 队标保存在 `assets/teams/`，通过 `data/schedule.js` 的 `teams[].logo` 字段关联，已接入全部 8 支战队的站主提供图片。图片按原比例显示，并加白色底衬以适配亮暗主题。
+- `data/team-rosters-2026-09-26.txt` 为当前 43 位选手的名单快照，含已知轮换与换线说明，便于人工核对。
 - 运行 `node tools/check_teams.js` 校验人员归属、换人继承、换线、MVP、选手英雄胜负和小局查询；再运行已有的各项 `tools/check_*.js` 及 `tools/smoke_test.js`。
 - `data/site.js` 是页面显示的网站版本号来源；`CHANGELOG.md` 记录每次更新。数据、功能、整体重做分别递增版本的第三、第二、第一位。

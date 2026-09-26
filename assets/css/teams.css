@@ -5,6 +5,7 @@
 .club-card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-3px); color: var(--text); }
 .club-card:focus-visible, .roster-card:focus-visible, .team-mvp-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .club-logo { display: block; width: 96px; height: 96px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+.club-logo:not(.empty) { padding: 10px; background: #fff; border: 1px solid #d5dbe7; }
 .club-logo.empty { border: 1px dashed var(--border-strong); background: var(--surface-2); }
 .club-card-name h2 { margin: 0 0 3px; font-size: 27px; letter-spacing: 1px; color: var(--text-strong); }
 .club-card-name > span { color: var(--text-muted); font-size: 12px; }

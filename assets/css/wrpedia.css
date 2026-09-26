@@ -272,7 +272,7 @@ h2.section .muted { font-size: 12px; color: var(--text-muted); font-weight: 400;
     background: hsl(var(--team-hue, 200) 45% 32%);
     border: 1px solid hsl(var(--team-hue, 200) 60% 52%);
 }
-.team-logo { max-height: 30px; max-width: 120px; object-fit: contain; }
+.team-logo { width: 40px; height: 32px; padding: 3px; object-fit: contain; flex-shrink: 0; background: #fff; border: 1px solid #d5dbe7; border-radius: 4px; }
 .team-name { font-weight: 600; color: var(--text); }
 .team-name.winner { color: var(--text-strong); font-weight: 700; }
 
