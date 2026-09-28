@@ -20,7 +20,7 @@
 //   team1/team2: { side: "blue"|"red", picks: [5 slugs], bans: [5 slugs] }
 //
 // New games: picks/bans retain each team's recorded draft order.
-// pickRoles/banRoles align with slots; two candidate roles each count 50%.
+// pickRoles/banRoles align with slots; two candidate roles each count 50%; three each count 1/3.
 // null ban = an intentionally unused slot. Legacy picks use top/jungle/mid/bot/support order.
 // startingLineups order: top/jungle/mid/bot/support; capitalization does not change player identity.
 // side.lineup snapshots roster slots; side.pickPlayers maps each pick to its actual operator.
@@ -37,7 +37,7 @@ window.WR_LEAGUE = {
     "ticker": "WRL 2026 Autumn",
     "startDate": "2026-08-21",
     "endDate": "2026-10-04",
-    "patch": "7.2（第 1–5 周） / 7.3（第 6 周起）",
+    "patch": "7.2（第 1–5 周） / 7.3（第 6 周） / 7.3a（第 7 周）；季后赛待定",
     "organizer": "待填写",
     "venue": "待填写",
     "prize": "待填写",
@@ -4563,10 +4563,7 @@ window.WR_LEAGUE = {
                 "teamId": "TT",
                 "role": "support",
                 "playerId": "tt-qingshan"
-              },
-              "notes": [
-                "蓝方打野青钢影选择了摇摆，TT 第二轮禁用李青、赵信。"
-              ]
+              }
             },
             {
               "length": "16:15",
@@ -5517,7 +5514,231 @@ window.WR_LEAGUE = {
           "vod": "",
           "youtube": "",
           "twitch": "",
-          "games": []
+          "games": [
+            {
+              "length": "18:09",
+              "winner": 1,
+              "draftOrder": "recorded",
+              "team1": {
+                "side": "blue",
+                "picks": [
+                  "senna",
+                  "singed",
+                  "ambessa",
+                  "syndra",
+                  "poppy"
+                ],
+                "bans": [
+                  "vi",
+                  "gwen",
+                  "bard",
+                  "xin-zhao",
+                  "olaf"
+                ],
+                "pickRoles": [
+                  "bot",
+                  "support",
+                  "jungle",
+                  "mid",
+                  "top"
+                ],
+                "banRoles": [
+                  "jungle",
+                  [
+                    "top",
+                    "mid"
+                  ],
+                  "support",
+                  "jungle",
+                  "top"
+                ],
+                "lineup": {
+                  "top": "fp-xhao",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-lin11",
+                  "fp-awei",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-xhao"
+                ]
+              },
+              "team2": {
+                "side": "red",
+                "picks": [
+                  "hwei",
+                  "karma",
+                  "yunara",
+                  "jarvan-iv",
+                  "garen"
+                ],
+                "bans": [
+                  "zilean",
+                  "malphite",
+                  "nautilus",
+                  "gragas",
+                  "yasuo"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "support",
+                  "bot",
+                  "jungle",
+                  "top"
+                ],
+                "banRoles": [
+                  "support",
+                  "top",
+                  "support",
+                  "support",
+                  "mid"
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-skyfl",
+                  "wbg-en77",
+                  "wbg-7yun",
+                  "wbg-xiaog",
+                  "wbg-zihan7"
+                ]
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "jungle",
+                "playerId": "fp-jiangzhi"
+              }
+            },
+            {
+              "length": "18:48",
+              "winner": 1,
+              "draftOrder": "recorded",
+              "team1": {
+                "side": "red",
+                "picks": [
+                  "sion",
+                  "ezreal",
+                  "gragas",
+                  "nocturne",
+                  "aurelion-sol"
+                ],
+                "bans": [
+                  "zilean",
+                  "bard",
+                  "chogath",
+                  "xin-zhao",
+                  "lee-sin"
+                ],
+                "pickRoles": [
+                  "top",
+                  "bot",
+                  "support",
+                  "jungle",
+                  "mid"
+                ],
+                "banRoles": [
+                  "support",
+                  "support",
+                  "jungle",
+                  "jungle",
+                  "jungle"
+                ],
+                "lineup": {
+                  "top": "fp-xhao",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xhao",
+                  "fp-lin11",
+                  "fp-awei",
+                  "fp-jiangzhi",
+                  "fp-soldier"
+                ]
+              },
+              "team2": {
+                "side": "blue",
+                "picks": [
+                  "malphite",
+                  "caitlyn",
+                  "milio",
+                  "vi",
+                  "mordekaiser"
+                ],
+                "bans": [
+                  "nautilus",
+                  "gwen",
+                  "nunu-and-willump",
+                  "yasuo",
+                  "yone"
+                ],
+                "pickRoles": [
+                  "top",
+                  "bot",
+                  "support",
+                  "jungle",
+                  "mid"
+                ],
+                "banRoles": [
+                  "support",
+                  [
+                    "top",
+                    "mid"
+                  ],
+                  "jungle",
+                  "mid",
+                  "mid"
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-7yun",
+                  "wbg-en77",
+                  "wbg-xiaog",
+                  "wbg-skyfl"
+                ]
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "top",
+                "playerId": "fp-xhao"
+              }
+            }
+          ],
+          "completed": true,
+          "startingLineups": {
+            "FP": [
+              "Xhao",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ],
+            "WBG": [
+              "ZiHan7",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ]
+          }
         },
         {
           "id": "W6M7",
@@ -5530,7 +5751,228 @@ window.WR_LEAGUE = {
           "vod": "",
           "youtube": "",
           "twitch": "",
-          "games": []
+          "games": [
+            {
+              "length": "16:15",
+              "winner": 2,
+              "draftOrder": "recorded",
+              "team1": {
+                "side": "blue",
+                "picks": [
+                  "senna",
+                  "chogath",
+                  "gragas",
+                  "poppy",
+                  "akali"
+                ],
+                "bans": [
+                  "bard",
+                  "syndra",
+                  "hwei",
+                  "karma",
+                  "morgana"
+                ],
+                "pickRoles": [
+                  "bot",
+                  "jungle",
+                  "support",
+                  "top",
+                  "mid"
+                ],
+                "banRoles": [
+                  "support",
+                  "mid",
+                  "mid",
+                  "support",
+                  "support"
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-berry",
+                  "rv-huiba",
+                  "rv-tak",
+                  "rv-xzhang",
+                  "rv-anran9"
+                ]
+              },
+              "team2": {
+                "side": "red",
+                "picks": [
+                  "gwen",
+                  "ambessa",
+                  "sivir",
+                  "singed",
+                  "sona"
+                ],
+                "bans": [
+                  "zilean",
+                  "vi",
+                  "nunu-and-willump",
+                  "yone",
+                  "renekton"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "bot",
+                  "top",
+                  "support"
+                ],
+                "banRoles": [
+                  "support",
+                  "jungle",
+                  "jungle",
+                  "mid",
+                  "top"
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-niuniu",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-z",
+                  "tt-niuniu",
+                  "tt-kk",
+                  "tt-dawn128",
+                  "tt-qingshan"
+                ]
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "bot",
+                "playerId": "tt-kk"
+              }
+            },
+            {
+              "length": "22:44",
+              "winner": 2,
+              "draftOrder": "recorded",
+              "team1": {
+                "side": "blue",
+                "picks": [
+                  "karma",
+                  "xayah",
+                  "camille",
+                  "ekko",
+                  "malphite"
+                ],
+                "bans": [
+                  "bard",
+                  "syndra",
+                  "nunu-and-willump",
+                  "ezreal",
+                  "corki"
+                ],
+                "pickRoles": [
+                  "support",
+                  "bot",
+                  "mid",
+                  "jungle",
+                  "top"
+                ],
+                "banRoles": [
+                  "support",
+                  "mid",
+                  "jungle",
+                  "bot",
+                  "bot"
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-tak",
+                  "rv-berry",
+                  "rv-anran9",
+                  "rv-huiba",
+                  "rv-xzhang"
+                ]
+              },
+              "team2": {
+                "side": "red",
+                "picks": [
+                  "ryze",
+                  "nautilus",
+                  "yone",
+                  "lee-sin",
+                  "sion"
+                ],
+                "bans": [
+                  "zilean",
+                  "vi",
+                  "hwei",
+                  "nidalee",
+                  "jax"
+                ],
+                "pickRoles": [
+                  "bot",
+                  "support",
+                  "mid",
+                  "jungle",
+                  "top"
+                ],
+                "banRoles": [
+                  "support",
+                  "jungle",
+                  "mid",
+                  "jungle",
+                  [
+                    "top",
+                    "mid"
+                  ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-niuniu",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-kk",
+                  "tt-qingshan",
+                  "tt-z",
+                  "tt-niuniu",
+                  "tt-dawn128"
+                ]
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "top",
+                "playerId": "tt-dawn128"
+              }
+            }
+          ],
+          "completed": true,
+          "startingLineups": {
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ],
+            "TT": [
+              "Dawn128",
+              "Niuniu",
+              "Z",
+              "KK",
+              "qingshan"
+            ]
+          }
         },
         {
           "id": "W6M8",
@@ -5543,13 +5985,236 @@ window.WR_LEAGUE = {
           "vod": "",
           "youtube": "",
           "twitch": "",
-          "games": []
+          "games": [
+            {
+              "length": "18:08",
+              "winner": 2,
+              "draftOrder": "recorded",
+              "team1": {
+                "side": "blue",
+                "picks": [
+                  "ambessa",
+                  "chogath",
+                  "varus",
+                  "thresh",
+                  "renekton"
+                ],
+                "bans": [
+                  "vi",
+                  "nunu-and-willump",
+                  "nautilus",
+                  "lee-sin",
+                  "camille"
+                ],
+                "pickRoles": [
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support",
+                  "mid"
+                ],
+                "banRoles": [
+                  "jungle",
+                  "jungle",
+                  "support",
+                  "jungle",
+                  [
+                    "top",
+                    "mid",
+                    "jungle"
+                  ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-august",
+                  "ss1-meng7",
+                  "ss1-yuri",
+                  "ss1-smy",
+                  "ss1-yousa"
+                ]
+              },
+              "team2": {
+                "side": "red",
+                "picks": [
+                  "gwen",
+                  "senna",
+                  "galio",
+                  "hecarim",
+                  "malphite"
+                ],
+                "bans": [
+                  "zilean",
+                  "ryze",
+                  "hwei",
+                  "bard",
+                  "gragas"
+                ],
+                "pickRoles": [
+                  "top",
+                  "bot",
+                  "support",
+                  "jungle",
+                  "mid"
+                ],
+                "banRoles": [
+                  "support",
+                  "mid",
+                  "mid",
+                  "support",
+                  "support"
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu",
+                  "kbg-dat",
+                  "kbg-xzhen"
+                ]
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "jungle",
+                "playerId": "kbg-dat"
+              }
+            },
+            {
+              "length": "16:18",
+              "winner": 2,
+              "draftOrder": "recorded",
+              "team1": {
+                "side": "blue",
+                "picks": [
+                  "poppy",
+                  "ezreal",
+                  "gragas",
+                  "rumble",
+                  "nocturne"
+                ],
+                "bans": [
+                  "nautilus",
+                  "nunu-and-willump",
+                  "vi",
+                  "lee-sin",
+                  "karma"
+                ],
+                "pickRoles": [
+                  "top",
+                  "bot",
+                  "support",
+                  "mid",
+                  "jungle"
+                ],
+                "banRoles": [
+                  "support",
+                  "jungle",
+                  "jungle",
+                  "jungle",
+                  "support"
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-yuri",
+                  "ss1-smy",
+                  "ss1-yousa",
+                  "ss1-august"
+                ]
+              },
+              "team2": {
+                "side": "red",
+                "picks": [
+                  "caitlyn",
+                  "singed",
+                  "sion",
+                  "milio",
+                  "olaf"
+                ],
+                "bans": [
+                  "zilean",
+                  "hwei",
+                  "ryze",
+                  "syndra",
+                  "aurelion-sol"
+                ],
+                "pickRoles": [
+                  "bot",
+                  "mid",
+                  "top",
+                  "support",
+                  "jungle"
+                ],
+                "banRoles": [
+                  "support",
+                  "mid",
+                  "mid",
+                  "mid",
+                  "mid"
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xiaoma",
+                  "kbg-jimeng",
+                  "kbg-xzhen",
+                  "kbg-uu",
+                  "kbg-dat"
+                ]
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "jungle",
+                "playerId": "kbg-dat"
+              }
+            }
+          ],
+          "completed": true,
+          "startingLineups": {
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ],
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ]
+          }
         }
-      ]
+      ],
+      "completed": true
     },
     {
       "id": "week7",
-      "patch": "7.3",
+      "patch": "7.3a",
       "title": "第 7 周（10.2–10.4）",
       "date": "2026-10-02",
       "matches": [

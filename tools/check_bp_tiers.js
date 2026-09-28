@@ -121,7 +121,8 @@ assert.equal(actual.stats.renekton.wins, 10);
 assert.ok(actual.stats.renekton.tier.baseScore > actual.stats.renekton.tier.score);
 assert.equal(actual.stats.renekton.tier.score, 49.4);
 assert.equal(actual.stats.renekton.tier.label, "T2");
-assert.ok(Object.values(WR.computeStats("7.3").stats).every(st => st.tier.score === null));
+assert.ok(Number.isFinite(WR.computeStats("7.3").stats.hwei.tier.score));
+assert.equal(WR.computeStats("7.3").stats.gwen.tier.score, null, "fearless denominator under 12 remains pending");
 assert.deepEqual(actual.tierModel, WR.computeStats("7.2").tierModel);
 console.log("current tiers:", actual.tierModel.levels.map(level => level.label + "=" + Object.values(actual.stats).filter(st => st.tier.label === level.label).length).join(" "));
 

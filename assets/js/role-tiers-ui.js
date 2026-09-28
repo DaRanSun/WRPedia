@@ -8,9 +8,9 @@
         return '<p>' + esc(lane.name) + ' · ' + badge(row) + (row.provisional ? ' <span class="tier-provisional">初步</span>' : '') + '</p>' +
             '<div class="stats-summary"><span class="stat-chip">本分路 <b>' + row.picks + '</b> 次选用</span><span class="stat-chip"><b>' +
             row.wins + ' 胜 ' + row.losses + ' 负</b></span><span class="stat-chip">胜率 <b>' + WR.pct(row.wins, row.losses) + '</b></span></div>' +
-            '<p>标注 Ban 按录入分路统计，双位置各占 50%。未标注部分按实际出场比例或站主确认分路估算，本路分摊比例为 ' +
+            '<p>标注 Ban 按录入分路统计，双位置各占 50%，三位置各占 1/3。未标注部分按实际出场比例或站主确认分路估算，本路分摊比例为 ' +
             WR.fmtPercent(row.banShare * 100) + '。' + (row.pureBan ? '本路尚无选用战绩，修正胜率取中性 50%，不视为实际胜率。' : '') + '</p>' +
-            (row.strength == null ? '' : '<div class="tier-formula">标注 Ban（含双位置平分） = ' + row.recordedBans.toFixed(2) +
+            (row.strength == null ? '' : '<div class="tier-formula">标注 Ban（含多位置均分） = ' + row.recordedBans.toFixed(2) +
             '<br>未标注 Ban 的估算份额 = ' + row.estimatedBans.toFixed(2) + '<br>分路 Ban 合计 = <b>' + row.laneBans.toFixed(2) + '</b><br>' +
             '有效局数 = ' + row.available + '<br>分路热度 = ' + row.heat.toFixed(4) + '<br>本分路修正胜率 = ' + WR.fmtPercent(row.smoothedWinRate * 100) +
             '<br>分路强度 = 热度 × 2 × 修正胜率 = <b>' + row.strength.toFixed(4) + '</b><br>' +

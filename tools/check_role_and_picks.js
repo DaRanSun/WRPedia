@@ -62,8 +62,9 @@ console.log('ok: manual formula, lane-only wins, ban allocation, sample guards, 
 
 const actual = WR.computeStats(), snapshot = JSON.stringify(WR.league);
 const historicalRoles = WR.computeStats('7.2').roleTierModel;
-assert.equal(actual.totalGames, 103);
-assert.ok(Object.values(WR.computeStats('7.3').roleTierModel.roles).every(r => r.rows.every(s => s.status === 'pending')));
+assert.equal(actual.totalGames, 109);
+assert.ok(Object.values(WR.computeStats('7.3').roleTierModel.roles).some(r => r.rows.some(s => s.status === 'rated')));
+assert.ok(Object.values(WR.computeStats('7.3').roleTierModel.roles).every(r => r.rows.every(s => s.status !== 'invalid')));
 assert.equal(actual.stats.zilean.tier.label, 'OP', 'overall all-ban rating is preserved');
 assert.equal(actual.roleTierModel.roles.support.rows.find(r => r.slug === 'zilean').label, 'OP');
 assert.equal(actual.roleTierModel.unassigned.length, 0);

@@ -72,7 +72,7 @@
 
     function roleShares(value) {
         const roles = Array.isArray(value) ? value : value ? [value] : [];
-        if (!roles.length || roles.length > 2 || new Set(roles).size !== roles.length || roles.some(r => !ROLE_NAMES[r])) return {};
+        if (!roles.length || roles.length > 3 || new Set(roles).size !== roles.length || roles.some(r => !ROLE_NAMES[r])) return {};
         return Object.fromEntries(roles.map(r => [r, 1 / roles.length]));
     }
 
@@ -89,6 +89,11 @@
         return Object.keys(shares).map(r => ROLE_NAMES[r]).join("／") || "分路未标注";
     }
 
+    function roleShareLabel(shares) {
+        const count = Object.keys(shares).length;
+        return count === 2 ? '各 50%' : count === 3 ? '各 1/3' : '';
+    }
+
     function draftSideHtml(side, selected) {
         const ordered = Array.isArray(side.pickRoles);
         let html = '<div class="bans-label">选用 · ' + (ordered ? '按队内选取顺序' : '按分路排列') + '</div><div class="history-picks">';
@@ -97,7 +102,7 @@
             const player = getPlayer((side.pickPlayers || [])[index]);
             html += '<div class="history-pick' + (chosen ? ' selected' : '') + '" data-pick-slot="' + (index + 1) + '"><span>' +
                 (ordered ? (index + 1) + '. ' : '') + escapeHtml(roleLabel(shares)) + '</span>' + champImg(slug) +
-                '<b>' + escapeHtml(championName(slug)) + '</b>' + (Object.keys(shares).length === 2 ? '<small>各 50%</small>' : '') +
+                '<b>' + escapeHtml(championName(slug)) + '</b>' + (roleShareLabel(shares) ? '<small>' + roleShareLabel(shares) + '</small>' : '') +
                 (player ? '<small class="draft-player">' + escapeHtml(player.name) + '</small>' : '') +
                 (chosen ? '<small>查询英雄</small>' : '') + '</div>';
         });
@@ -106,7 +111,7 @@
             const shares = banRoleShares(side, index), count = Object.keys(shares).length;
             html += '<span data-ban-slot="' + (index + 1) + '">' + (slug ? champImg(slug, 'ban') : '<span class="empty-ban" aria-hidden="true">—</span>') +
                 '<small>' + (index + 1) + '. ' + (slug ? escapeHtml(championName(slug)) : '空 Ban') + '</small>' +
-                (slug && count ? '<small>' + escapeHtml(roleLabel(shares)) + (count === 2 ? '<br>各 50%' : '') + '</small>' : '') + '</span>';
+                (slug && count ? '<small>' + escapeHtml(roleLabel(shares)) + (roleShareLabel(shares) ? '<br>' + roleShareLabel(shares) : '') + '</small>' : '') + '</span>';
         });
         return html + '</div>';
     }

@@ -52,7 +52,7 @@
                 if (exclusions && exclusions[slug]) { row.status = "excluded"; row.label = "不参与"; row.reason = String(exclusions[slug]); }
                 else if (!valid(st)) { row.status = "invalid"; row.label = "待核对"; row.reason = "分路或 BP 记录不完整。"; }
                 else {
-                    // Explicit (including 50/50) lane tags take priority. Only untagged bans
+                    // Explicit (including equal multi-role shares) lane tags take priority. Only untagged bans
                     // are estimated from picks or owner-confirmed pure-ban assignments.
                     row.recordedBans = recorded;
                     row.estimatedBans = estimated;

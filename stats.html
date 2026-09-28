@@ -69,16 +69,16 @@
                     <button type="button" class="btn" data-role-tier="bot" aria-pressed="false">下路</button>
                     <button type="button" class="btn" data-role-tier="support" aria-pressed="false">辅助</button>
                 </div>
-                <p class="scope-note">选用与胜负按实际分路统计。Ban 优先采用标注分路，双位置各计 50%；未标注部分再按出场比例估算。相对分只在同一分路、同一版本内比较。上方英雄筛选同样适用，点击英雄查看完整指标与计算依据。</p>
+                <p class="scope-note">选用与胜负按实际分路统计。Ban 优先采用标注分路，双位置各计 50%，三位置各计 1/3；未标注部分再按出场比例估算。相对分只在同一分路、同一版本内比较。上方英雄筛选同样适用，点击英雄查看完整指标与计算依据。</p>
                 <p id="role-tier-count" class="scope-note" aria-live="polite"></p>
                 <p id="role-tier-unassigned" class="notice warn" hidden></p>
                 <div id="role-tier-results"></div>
                 <details class="bp-tier-method"><summary>分路梯度如何计算？</summary>
-                    <p>设 P 为本分路选用次数、W 为本分路胜场，P总为该英雄全部分路的选用次数，K 为本分路已标注 Ban（含双位置各半），U 为该英雄未标注分路的 Ban，N 为双边无畏有效局数。以上数据均来自当前所选版本。</p>
+                    <p>设 P 为本分路选用次数、W 为本分路胜场，P总为该英雄全部分路的选用次数，K 为本分路已标注 Ban（含多位置均分），U 为该英雄未标注分路的 Ban，N 为双边无畏有效局数。以上数据均来自当前所选版本。</p>
                     <div class="tier-formula">分路 Ban = K + U × P / P总（P总 > 0）<br>分路热度 = (P + 分路 Ban) / (N + 8)<br>修正胜率 = (W + 4) / (P + 8)<br>分路强度 = 分路热度 × 2 × 修正胜率<br>比较基准 = max(0.25，本分路已评级英雄的最高强度)<br><b>相对分 = 100 × 分路强度 / 比较基准</b></div>
                     <ul>
-                        <li>BP 顺序与分路分开记录：选用按实际位置计算，双位置不确定记录的选用与胜负各分摊 50%；历史选用仍按原上／野／中／下／辅顺序解析。多分路英雄只使用本分路的选用和胜负。任何位置选用后都会触发无畏锁定，因此 N 仍按英雄整体是否可用计算。</li>
-                        <li>已标注分路的 Ban 直接计入该路，双位置各计 0.5 次；空 Ban 不计入英雄次数，并保留原顺位。只有未标注分路的 Ban 按当前统计范围的实际出场比例估算。各路之和与原始 Ban 对应，不重复分配；分路 Ban 与选用等权计入热度。</li>
+                        <li>BP 顺序与分路分开记录：选用按实际位置计算，不确定位置均分权重：双位置各 50%，三位置各 1/3；历史选用仍按原上／野／中／下／辅顺序解析。多分路英雄只使用本分路的选用和胜负。任何位置选用后都会触发无畏锁定，因此 N 仍按英雄整体是否可用计算。</li>
+                        <li>已标注分路的 Ban 直接计入该路，双位置各计 0.5 次，三位置各计 1/3 次；空 Ban 不计入英雄次数，并保留原顺位。只有未标注分路的 Ban 按当前统计范围的实际出场比例估算。各路之和与原始 Ban 对应，不重复分配；分路 Ban 与选用等权计入热度。</li>
                         <li>没有选用样本且 Ban 未标注分路时，按站主确认的位置估算：基兰、阿利斯塔归辅助；阿萝拉归中路；塔莉垭归打野；沃里克归上单。尚未确认的英雄列入“分路待确认”。一旦出现选用，未标注部分改按该范围内的实际出场比例分配。明确标注始终优先；某路没有选用时，修正胜率取中性 50%，不虚构实际胜率。</li>
                         <li>至少本分路 3 次选用、12 个有效小局才评级；不足 10 次选用或 30 个有效小局标为“初步”。本路只有 Ban 的英雄以分路 Ban 次数替代选用次数判断样本门槛。无样本与小样本不会直接归为 T4。</li>
                         <li>相对分四舍五入到一位小数。OP ≥ 90；T0 ≥ 75；T1 ≥ 55；T2 ≥ 35；T3 ≥ 15；其余为 T4。OP 还需本分路至少 8 次选用、30 个有效小局、修正胜率 ≥ 50%，且强度达到本分路已评级英雄中位数的 1.5 倍；本路只有 Ban 的英雄以分路 Ban 判断 8 次门槛；未达到附加条件时最高为 T0。</li>
@@ -131,6 +131,7 @@
 <script src="data/schedule.js"></script>
 <script src="data/patches.js"></script>
 <script src="data/patch-7.3.js"></script>
+<script src="data/patch-7.3a.js"></script>
 <script src="data/champion-rules.js"></script>
 <script src="data/players.js"></script>
 <script src="data/site.js"></script>

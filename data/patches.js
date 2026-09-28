@@ -35,11 +35,11 @@ window.WR_PATCHES = [
     {
         id: "7.2d", sourceCN: "https://lolm.qq.com/v2/news-page.html?docid=6909026084858112167", major: "7.2", published: "2026-08-26", weeks: "第 2–3 周", status: "已采用",
         title: "法师与战士补强，热门选角降温",
-        summary: "莫德凯撒、悠米、辛德拉与凯特琳加强；锤石、永恩、格温及崔斯特受到削弱。",
+        summary: "莫德凯撒、辛德拉与凯特琳加强；锤石、永恩、格温及崔斯特受到削弱。",
         source: "https://wildrift.leagueoflegends.com/zh-tw/news/game-updates/wild-rift-patch-notes-7-2d/",
         champions: [
             { slug: "mordekaiser", type: "buff", core: true, summary: "被动穿透提高，E 更频繁，改善后期作战能力。", changes: ["被动魔法穿透 1/3/5/7% → 3/6/9/12%；E 冷却 17.5/15/12.5/10 → 15/13/11/9 秒。"] },
-            { slug: "yuumi", type: "buff", core: true, summary: "附身与护盾更频繁，治疗／护盾收益提高。", changes: ["W 冷却 10/5/0 → 8/4/0 秒；被动治疗与护盾强度 6/7/8/9% → 8/9/10/11%。", "E 冷却 10 → 9 秒；护盾 85/110/135/160 + 30% 法强 → 80/110/140/170 + 40% 法强（一级基础值略降）。"] },
+            { slug: "yuumi", type: "buff", summary: "附身与护盾更频繁，治疗／护盾收益提高。", changes: ["W 冷却 10/5/0 → 8/4/0 秒；被动治疗与护盾强度 6/7/8/9% → 8/9/10/11%。", "E 冷却 10 → 9 秒；护盾 85/110/135/160 + 30% 法强 → 80/110/140/170 + 40% 法强（一级基础值略降）。"] },
             { slug: "syndra", type: "buff", core: true, summary: "Q 基础伤害、W/E 法强收益与 E 频率全面提高。", changes: ["Q 基础伤害 70/115/160/205 → 80/130/180/230；W 法强系数 45% → 60%。", "E 冷却 17 → 15 秒；法强系数 35% → 50%。"] },
             { slug: "caitlyn", type: "buff", core: true, summary: "爆头成长提高，夹子充能加快，强化阵地控制。", changes: ["被动伤害 50%–100% 攻击力 + 125 × 暴击率 → 60%–110% 攻击力 + 200 × 暴击率。", "W 充能时间 27/22/17/12 → 25/20/15/10 秒。"] },
             { slug: "renekton", type: "buff", core: true, summary: "Q 额外攻击力收益提高，W 升级收益更高；一级 W 基础伤害略降。", changes: ["普通 Q 额外攻击力系数 90% → 100%。", "W 基础伤害 24/48/72/96 → 20/60/100/140；红怒 W 36/72/108/144 → 30/90/150/210。"] },
@@ -85,7 +85,7 @@ window.WR_PATCHES = [
         ]
     },
     {
-        id: "7.3", major: "7.3", published: "2026-09-21", weeks: "第 6 周起", status: "即将采用",
+        id: "7.3", major: "7.3", published: "2026-09-21", weeks: "第 6 周", status: "已采用",
         title: "软辅装备全面加强，暴击射手核心崛起",
         summary: "刷野速度全面改动，打野选择更加多样。",
         source: "https://wildrift.leagueoflegends.com/zh-tw/news/game-updates/wild-rift-patch-notes-7-3/",

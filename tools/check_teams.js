@@ -8,8 +8,8 @@ for (const file of ['data/champions.js', 'data/champion-locales.js', 'data/champ
 }
 const WR = ctx.window.WR, plain = value => JSON.parse(JSON.stringify(value)), roles = Object.keys(WR.roleNames);
 const snapshot = JSON.stringify(WR.league), matches = WR.league.rounds.flatMap(r => r.matches), find = id => matches.find(m => m.id === id);
-assert.equal(ctx.window.WR_SITE.version, '1.1.1');
-assert.equal(WR.players.length, 43); assert.equal(new Set(WR.players.map(p => p.id)).size, 43);
+assert.equal(ctx.window.WR_SITE.version, '1.2.0');
+assert.equal(WR.players.length, 44); assert.equal(new Set(WR.players.map(p => p.id)).size, 44);
 assert.equal(WR.resolvePlayer('FP', 'xhao').id, 'fp-xhao');
 assert.equal(WR.resolvePlayer('TT', 'niuniu').id, 'tt-niuniu');
 assert.equal(WR.resolvePlayer('WHG', 'tenes').id, 'whg-tenes');
@@ -47,20 +47,20 @@ for (const g of ss.games.slice(1)) {
 }
 assert.equal(ss.games[1].substitutions.length, 2);
 const stats = WR.computeStats(), v73 = WR.computeStats('7.3');
-assert.equal(stats.totalGames, 103); assert.equal(v73.totalGames, 11); assert.equal(WR.computeStats('7.2').totalGames, 92);
-assert.equal(Object.values(v73.stats).reduce((n, s) => n + s.picks, 0), 110);
-assert.equal(Object.values(v73.stats).reduce((n, s) => n + s.bans, 0), 109);
+assert.equal(stats.totalGames, 109); assert.equal(v73.totalGames, 17); assert.equal(WR.computeStats('7.2').totalGames, 92);
+assert.equal(Object.values(v73.stats).reduce((n, s) => n + s.picks, 0), 170);
+assert.equal(Object.values(v73.stats).reduce((n, s) => n + s.bans, 0), 169);
 assert.deepEqual(plain(v73.stats.ziggs.bansByRole), { top: 0, jungle: 0, mid: 0.5, bot: 0.5, support: 0 });
-assert.equal(v73.stats.olaf.bansByRole.top, 1.5); assert.equal(v73.stats.olaf.bansByRole.mid, 0.5);
-assert.equal(v73.stats.ambessa.roles.mid.picks, 1); assert.equal(v73.stats.malphite.roles.top.picks, 4);
+assert.equal(v73.stats.olaf.bansByRole.top, 2.5); assert.equal(v73.stats.olaf.bansByRole.mid, 0.5);
+assert.equal(v73.stats.ambessa.roles.mid.picks, 1); assert.equal(v73.stats.malphite.roles.top.picks, 6);
 const tt = WR.TeamStats.compute('TT', '7.3'), whg = WR.TeamStats.compute('WHG', '7.3');
-assert.deepEqual([tt.games, tt.wins, tt.losses, tt.seriesWins, tt.seriesLosses], [5, 4, 1, 2, 0]);
-assert.equal(tt.rosterGames, 5);
-for (const id of ['tt-xin', 'tt-niuniu']) assert.equal(tt.players[id].games, 3);
-for (const id of ['tt-dawn128', 'tt-xiaobai']) assert.equal(tt.players[id].games, 2);
+assert.deepEqual([tt.games, tt.wins, tt.losses, tt.seriesWins, tt.seriesLosses], [7, 6, 1, 3, 0]);
+assert.equal(tt.rosterGames, 7);
+assert.equal(tt.players['tt-xin'].games, 3); assert.equal(tt.players['tt-niuniu'].games, 5);
+assert.equal(tt.players['tt-dawn128'].games, 4); assert.equal(tt.players['tt-xiaobai'].games, 2);
 assert.equal(tt.players['tt-qingshan'].mvp, 3); assert.equal(tt.players['tt-xiaobai'].mvp, 1);
-assert.equal(tt.sides.blue.games, 1); assert.equal(tt.sides.red.games, 4);
-assert.equal(tt.sides.red.bans.zilean, 4); assert.equal(tt.sides.blue.bans.ziggs, 1);
+assert.equal(tt.sides.blue.games, 1); assert.equal(tt.sides.red.games, 6);
+assert.equal(tt.sides.red.bans.zilean, 6); assert.equal(tt.sides.blue.bans.ziggs, 1);
 assert.equal(whg.players['whg-zhou'].champions.ambessa.games, 2);
 assert.equal(whg.players['whg-zhou'].champions.yone.games, 1);
 assert.equal(whg.players['whg-awen'].champions.malphite.games, 1);
@@ -70,7 +70,7 @@ assert.equal(whg.players['whg-awen'].champions.ambessa, undefined);
 assert.deepEqual(plain(whg.players['whg-zhou'].champions.ambessa.roles), { top: 1, mid: 1 });
 assert.equal(WR.TeamStats.compute('FP', '7.3').players['fp-xiaomai'].games, 0);
 assert.equal(WR.TeamStats.compute('FP', '7.3').players['fp-lin11'].mvp, 1);
-assert.equal(WR.TeamStats.compute('FP', '7.3').players['fp-jiangzhi'].mvp, 1);
+assert.equal(WR.TeamStats.compute('FP', '7.3').players['fp-jiangzhi'].mvp, 2);
 assert.equal(WR.TeamStats.compute('WBG', '7.3').sides.blue.bans['lee-sin'], 1);
 let playerGames = 0, mvpCount = 0;
 for (const t of WR.league.teams) {
@@ -90,7 +90,7 @@ for (const t of WR.league.teams) {
     }
     for (const side of ['blue', 'red']) assert.equal(Object.values(current.sides[side].bans).reduce((n, c) => n + c, 0) + current.sides[side].emptyBans, current.sides[side].games * 5);
 }
-assert.equal(playerGames, 110); assert.equal(mvpCount, 11);
+assert.equal(playerGames, 170); assert.equal(mvpCount, 17);
 assert.equal(WR.TeamStats.compute('not-a-team'), null);
 assert.equal(JSON.stringify(WR.league), snapshot, 'queries never mutate roster snapshots');
 // Missing historical ownership must remain unknown; roster membership alone is insufficient.
@@ -102,4 +102,4 @@ WR.league.rounds = [{ patch: '7.3', matches: [{ opponent1: 'FP', opponent2: 'TT'
 assert.equal(WR.TeamStats.compute('FP').players['fp-xhao'].games, 0);
 assert.equal(WR.TeamStats.compute('FP').rosterGames, 0);
 WR.league.rounds = rounds;
-console.log('PASS: 103 games, 43 unique players, explicit ownership, substitutes persist, lane swaps, player hero wins, side bans, 11 MVPs, historical missingness and query reconciliation.');
+console.log('PASS: 109 games, 44 unique players, explicit ownership, substitutes persist, lane swaps, player hero wins, side bans, 17 MVPs, historical missingness and query reconciliation.');

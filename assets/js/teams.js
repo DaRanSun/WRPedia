@@ -10,7 +10,7 @@
     function rosterCard(stat, selected) {
         const p = stat.player;
         return '<button type="button" class="roster-card" data-player="' + p.id + '" aria-pressed="' + (p.id === selected) + '">' +
-            '<span class="roster-position">' + esc(WR.roleNames[p.role]) + (p.status ? ' · ' + esc(p.status) : '') + '</span><strong>' + esc(p.name) + '</strong>' +
+            '<span class="roster-position">' + esc(WR.roleNames[p.role]) + '</span><strong>' + esc(p.name) + '</strong>' +
             '<span>' + stat.games + ' 小局 · ' + (stat.games ? WR.pct(stat.wins, stat.losses) + ' 胜率' : '选用记录待补充') + '</span>' +
             '<span class="roster-mvp">已录入 MVP <b>' + stat.mvp + '</b></span></button>';
     }

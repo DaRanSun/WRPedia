@@ -44,8 +44,11 @@
         const article = document.getElementById('patch-content-' + patch.id);
         let html = '<header class="patch-heading"><div><div class="eyebrow">PATCH NOTES · 常规峡谷</div>' +
             '<h2>' + patch.id + '<span>' + esc(patch.title) + '</span></h2><p>' + esc(patch.summary) + '</p></div>' +
-            '<div class="patch-source"><span>赛事采用 · ' + esc(patch.weeks) + '</span><span>官方公告 · ' + patch.published + '</span>' +
-            '<a href="' + esc(patch.source) + '" target="_blank" rel="noopener noreferrer">Riot 官方公告 ↗</a>' +
+            '<div class="patch-source"><span>赛事采用 · ' + esc(patch.weeks) + '</span>' +
+            (patch.releaseDate ? '<span>版本上线 · ' + esc(patch.releaseDate) + '</span>' : '') +
+            (patch.published ? '<span>官方公告 · ' + esc(patch.published) + '</span>' : '') +
+            (patch.postseason ? '<span>' + esc(patch.postseason) + '</span>' : '') +
+            (patch.source ? '<a href="' + esc(patch.source) + '" target="_blank" rel="noopener noreferrer">Riot 官方公告 ↗</a>' : '') +
             (patch.sourceCN ? '<a href="' + esc(patch.sourceCN) + '" target="_blank" rel="noopener noreferrer">国服官方公告 ↗</a>' : '') + '</div></header>';
         html += '<div class="patch-toolbar"><span><span class="core-badge">★ 赛事重点</span> ' +
             (core.length ? '本版本 ' + core.length + ' 位重点英雄优先展示' : '大版本系统改动请结合装备、战场与属性附录阅读') +
@@ -82,7 +85,7 @@
             });
             html += '</div></details>';
         });
-        html += '<p class="scope-note">数值按官方常规峡谷公告整理，英雄与装备名称采用国服译名；赛事采用周次以本赛事记录为准。' +
+        html += '<p class="scope-note">仅收录常规峡谷改动，英雄与装备名称采用国服译名；赛事采用周次以本赛事记录为准。' +
             (patch.id === '7.3' ? '7.3 另含 51 位英雄生存属性及 141 位英雄攻速参数，见上方附录。' : '') + '</p>';
         article.innerHTML = html;
         document.getElementById('expand-patch-sections').addEventListener('click', function () {
@@ -109,9 +112,9 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         if (!patches.length) return;
-        document.getElementById('patch-index').innerHTML = '<table class="patch-index-table"><caption class="sr-only">版本目录，点击版本展开完整改动</caption><thead><tr><th>版本 / 公告日期</th><th>赛事采用</th><th>改动概览</th></tr></thead><tbody>' + patches.map(function (p) {
+        document.getElementById('patch-index').innerHTML = '<table class="patch-index-table"><caption class="sr-only">版本目录，点击版本展开完整改动</caption><thead><tr><th>版本 / 日期</th><th>赛事采用</th><th>改动概览</th></tr></thead><tbody>' + patches.map(function (p) {
             const core = p.champions.filter(function (c) { return c.core; }).length;
-            return '<tr class="patch-index-row" id="patch-' + p.id + '"><td><button type="button" class="patch-select" data-patch="' + p.id + '" aria-expanded="false" aria-controls="patch-details-' + p.id + '"><span class="patch-disclosure" aria-hidden="true">›</span><span><b>' + p.id + '</b><small>' + p.published + '</small></span></button></td>' +
+            return '<tr class="patch-index-row" id="patch-' + p.id + '"><td><button type="button" class="patch-select" data-patch="' + p.id + '" aria-expanded="false" aria-controls="patch-details-' + p.id + '"><span class="patch-disclosure" aria-hidden="true">›</span><span><b>' + p.id + '</b><small>' + esc(p.releaseDate ? '上线 ' + p.releaseDate : '公告 ' + p.published) + '</small></span></button></td>' +
                 '<td>' + esc(p.weeks) + '<small>' + esc(adoptionStatus(p)) + '</small></td><td>' + p.champions.length + ' 位英雄<small>' + (core ? core + ' 位赛事重点' : '含装备与战场系统') + '</small></td></tr>' +
                 '<tr id="patch-details-' + p.id + '" class="patch-expanded-row" hidden><td colspan="3"><div id="patch-content-' + p.id + '" class="patch-expanded-content"></div></td></tr>';
         }).join('') + '</tbody></table>';

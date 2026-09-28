@@ -263,5 +263,11 @@ window.WR_PLAYERS = [
     "name": "Xiaobai",
     "role": "jungle",
     "status": "轮换"
+  },
+  {
+    "id": "wbg-zihan7",
+    "teamId": "WBG",
+    "name": "ZiHan7",
+    "role": "top"
   }
 ];
