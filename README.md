@@ -1,11 +1,11 @@
 # WRpedia · 英雄联盟手游（Wild Rift）独立数据站
 
-当前网站版本：**V1.3.0**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
+当前网站版本：**V1.4.0**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
 
 仿 Liquipedia 风格的《英雄联盟手游》赛事数据站。概览展示后续赛程、积分前四和选手 MVP 前五（截止位同分全部展示）。其他页面：
 
 - `teams.html` / `team.html?team=TT` — 战队入口与详情：50 位选手、按实际出场统计主副位置、红蓝方 Ban、队内 MVP、平均时长及赛程
-- `player.html?player=whg-awen` — 独立选手档案：英雄一览、逐局实际分路、选择、胜负与 MVP；从战队页点击选手在新标签页打开
+- `player.html?player=whg-awen` — 独立选手档案：英雄一览、逐局实际分路、选择、胜负与 MVP；点击选手在当前标签页跳转
 - `schedule.html` — 小组赛赛程页：赛制说明、8 队双循环积分榜、全部比赛及每小局 BP 详情
 - `stats.html` — 数据统计页：总榜 / 7.2 / 7.3；英雄 BP 梯度、选用/禁用统计、蓝红方胜率、搭档与对手、未上场英雄、比赛时长分布
 - `patches.html` — 版本页：7.2c、7.2d、7.2e、7.3、7.3a 的常规峡谷改动、赛事重点、装备／符文／战场与官方来源

@@ -10,10 +10,10 @@
     function rosterCard(stat, version) {
         const p = stat.player;
         const breakdown = WR.TeamStats.rankedRoles(stat).map(([role, n]) => WR.roleNames[role] + ' ' + n + ' 局').join(' · ');
-        return '<a class="roster-card" href="' + playerUrl(p.id, version) + '" target="_blank" rel="noopener" data-player="' + p.id + '" aria-label="' + esc(p.name) + ' 的选手档案（新标签页）">' +
+        return '<a class="roster-card" href="' + playerUrl(p.id, version) + '" data-player="' + p.id + '" aria-label="' + esc(p.name) + ' 的选手档案">' +
             '<span class="roster-position" title="' + esc(breakdown) + '">' + esc(WR.TeamStats.roleText(stat)) + '</span><strong>' + esc(p.name) + '</strong>' +
             '<span>' + stat.games + ' 小局 · ' + (stat.games ? WR.pct(stat.wins, stat.losses) + ' 胜率' : '暂无出场') + '</span>' +
-            '<span class="roster-mvp">MVP <b>' + stat.mvp + '</b></span><span class="player-open-hint">选手档案 ↗</span></a>';
+            '<span class="roster-mvp">MVP <b>' + stat.mvp + '</b></span><span class="player-open-hint">选手档案 →</span></a>';
     }
     function banPanel(side, sideLabel, cls) {
         const rows = Object.entries(side.bans).sort((a, b) => b[1] - a[1] || WR.championName(a[0]).localeCompare(WR.championName(b[0]), 'zh'));
@@ -69,11 +69,11 @@
                 chip('大场', current.seriesWins + ' 胜 ' + current.seriesLosses + ' 负') + chip('小局', current.wins + ' 胜 ' + current.losses + ' 负') + chip('小局胜率', WR.pct(current.wins, current.losses)) +
                 chip('平均时长', WR.TeamStats.formatDuration(current.averageDuration.all)) + chip('胜场平均', WR.TeamStats.formatDuration(current.averageDuration.wins)) + chip('败场平均', WR.TeamStats.formatDuration(current.averageDuration.losses)) + '</div>' +
                 '<nav class="team-section-nav" aria-label="战队页内容"><a href="#roster">阵容与选手</a><a href="#team-mvp">队内 MVP</a><a href="#team-bans">禁用倾向</a><a href="#team-schedule">战队赛程</a></nav>' +
-                '<section id="roster"><h2 class="section">阵容与选手 <span class="muted">' + roster.length + ' 位 · 点击在新标签页查看档案</span></h2>' +
+                '<section id="roster"><h2 class="section">阵容与选手 <span class="muted">' + roster.length + ' 位 · 点击查看选手档案</span></h2>' +
                 '<p class="scope-note">位置按当前版本范围内的实际出场次数由多到少排列；换线按该局实际分路统计。</p><div class="team-roster">' +
                 roster.map(st => rosterCard(st, version)).join('') + '</div></section>' +
                 '<section id="team-mvp"><h2 class="section">队内 MVP <span class="muted">共 ' + current.mvpRecorded + ' 次</span></h2><div class="team-mvp-list">' + mvps.map((st, i) =>
-                    '<a class="team-mvp-row" href="' + playerUrl(st.player.id, version) + '" target="_blank" rel="noopener"><span class="text-muted">' + (st.mvp ? mvps.findIndex(p => p.mvp === st.mvp) + 1 : '—') + '</span><strong>' + esc(st.player.name) +
+                    '<a class="team-mvp-row" href="' + playerUrl(st.player.id, version) + '"><span class="text-muted">' + (st.mvp ? mvps.findIndex(p => p.mvp === st.mvp) + 1 : '—') + '</span><strong>' + esc(st.player.name) +
                     '</strong><span>' + esc(WR.TeamStats.roleText(st)) + '</span><b>' + st.mvp + '</b></a>').join('') + '</div><p class="scope-note">按小局累计 MVP；并列选手显示相同名次。</p></section>' +
                 '<section id="team-bans"><h2 class="section">红蓝方禁用倾向</h2><p class="scope-note">统计本队在各方主动禁用的英雄。禁用率 = 该英雄禁用次数 ÷ 本队该方已录入小局数。</p><div class="team-bans-grid">' +
                 banPanel(current.sides.blue, '蓝方', 'blue') + banPanel(current.sides.red, '红方', 'red') + '</div></section>' +
