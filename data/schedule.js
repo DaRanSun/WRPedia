@@ -25,6 +25,7 @@
 // startingLineups order: top/jungle/mid/bot/support; capitalization does not change player identity.
 // side.lineup snapshots roster slots; side.pickPlayers maps each pick to its actual operator.
 // pickRoles always describes the in-game lane, including lane swaps.
+// pickOrder: "legacy-role" preserves legacy position order, not actual draft order.
 // game.substitutions lists ordered changes; game.mvp stores teamId, role and playerId.
 // Champion slugs live in data/champions.json. In the browser console:
 //   Object.keys(WR.champions)
@@ -149,7 +150,29 @@ window.WR_LEAGUE = {
                   "bard",
                   "ksante",
                   "yone"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -166,7 +189,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "varus",
                   "corki"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-tbb",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-tbb",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             },
             {
@@ -187,7 +237,29 @@ window.WR_LEAGUE = {
                   "camille",
                   "varus",
                   "sivir"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -204,10 +276,53 @@ window.WR_LEAGUE = {
                   "akali",
                   "rakan",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-tbb",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-tbb",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "top",
+                "playerId": "rv-tbb"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ],
+            "RV": [
+              "Tbb",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ]
+          }
         },
         {
           "id": "W1M2",
@@ -239,7 +354,29 @@ window.WR_LEAGUE = {
                   "vi",
                   "gwen",
                   "akali"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-xzhen",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-xzhen",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -256,7 +393,34 @@ window.WR_LEAGUE = {
                   "renekton",
                   "varus",
                   "olaf"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "mid",
+                "playerId": "kbg-xzhen"
               }
             },
             {
@@ -277,7 +441,29 @@ window.WR_LEAGUE = {
                   "vi",
                   "olaf",
                   "jayce"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-xzhen",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-xzhen",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -294,7 +480,34 @@ window.WR_LEAGUE = {
                   "renekton",
                   "ksante",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "top",
+                "playerId": "wbg-zihan7"
               }
             },
             {
@@ -315,7 +528,29 @@ window.WR_LEAGUE = {
                   "renekton",
                   "ziggs",
                   "ornn"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-xzhen",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-xzhen",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -332,10 +567,53 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "olaf",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "bot",
+                "playerId": "kbg-xiaoma"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "KBG": [
+              "ggg",
+              "DaT",
+              "Xzhen",
+              "Xiaoma",
+              "Uu"
+            ],
+            "WBG": [
+              "ZiHan7",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ]
+          }
         },
         {
           "id": "W1M3",
@@ -367,7 +645,29 @@ window.WR_LEAGUE = {
                   "bard",
                   "varus",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-xzhen",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-xzhen",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -384,7 +684,34 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "akali",
                   "renekton"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "mid",
+                "playerId": "ss1-yousa"
               }
             },
             {
@@ -405,7 +732,29 @@ window.WR_LEAGUE = {
                   "twisted-fate",
                   "taliyah",
                   "ziggs"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-xzhen",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-xzhen",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -422,7 +771,34 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "xayah",
                   "lucian"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "bot",
+                "playerId": "kbg-xiaoma"
               }
             },
             {
@@ -443,7 +819,29 @@ window.WR_LEAGUE = {
                   "twisted-fate",
                   "milio",
                   "galio"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-xzhen",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-xzhen",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -460,10 +858,53 @@ window.WR_LEAGUE = {
                   "renekton",
                   "jax",
                   "aatrox"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "support",
+                "playerId": "ss1-smy"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "KBG": [
+              "ggg",
+              "DaT",
+              "Xzhen",
+              "Xiaoma",
+              "Uu"
+            ],
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ]
+          }
         },
         {
           "id": "W1M4",
@@ -495,7 +936,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "rumble",
                   "volibear"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -512,7 +975,34 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "gragas",
                   "xin-zhao"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "mid",
+                "playerId": "rv-anran9"
               }
             },
             {
@@ -533,7 +1023,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "volibear",
                   "ksante"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -550,10 +1062,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "galio",
                   "karma"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ],
+            "WBG": [
+              "ZiHan7",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ]
+          }
         },
         {
           "id": "W1M5",
@@ -585,7 +1140,29 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "olaf",
                   "volibear"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-adong",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-adong",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -602,7 +1179,34 @@ window.WR_LEAGUE = {
                   "bard",
                   "varus",
                   "morgana"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "mid",
+                "playerId": "fp-soldier"
               }
             },
             {
@@ -623,7 +1227,29 @@ window.WR_LEAGUE = {
                   "vi",
                   "twisted-fate",
                   "akali"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-adong",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-adong",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -640,10 +1266,53 @@ window.WR_LEAGUE = {
                   "bard",
                   "miss-fortune",
                   "jax"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "mid",
+                "playerId": "fp-soldier"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WHG": [
+              "Zhou",
+              "adong",
+              "Awen",
+              "spark",
+              "Intro"
+            ],
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ]
+          }
         },
         {
           "id": "W1M6",
@@ -675,7 +1344,29 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "miss-fortune",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -692,7 +1383,34 @@ window.WR_LEAGUE = {
                   "camille",
                   "morgana",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             },
             {
@@ -713,7 +1431,29 @@ window.WR_LEAGUE = {
                   "olaf",
                   "karma",
                   "thresh"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -730,10 +1470,53 @@ window.WR_LEAGUE = {
                   "camille",
                   "morgana",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ],
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ]
+          }
         },
         {
           "id": "W1M7",
@@ -765,7 +1548,29 @@ window.WR_LEAGUE = {
                   "camille",
                   "karma",
                   "milio"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -782,7 +1587,34 @@ window.WR_LEAGUE = {
                   "bard",
                   "xayah",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-adong",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-adong",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WHG",
+                "role": "top",
+                "playerId": "whg-awen"
               }
             },
             {
@@ -803,7 +1635,29 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "volibear",
                   "olaf"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -820,7 +1674,34 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "varus",
                   "yunara"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-adong",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-adong",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "ACE",
+                "role": "mid",
+                "playerId": "ace-ziyu"
               }
             },
             {
@@ -841,7 +1722,29 @@ window.WR_LEAGUE = {
                   "jax",
                   "jarvan-iv",
                   "viego"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -858,10 +1761,53 @@ window.WR_LEAGUE = {
                   "akali",
                   "nocturne",
                   "warwick"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-adong",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-adong",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "ACE",
+                "role": "jungle",
+                "playerId": "ace-xs"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "Shuangyi",
+              "Ban"
+            ],
+            "WHG": [
+              "Zhou",
+              "adong",
+              "Awen",
+              "spark",
+              "Intro"
+            ]
+          }
         },
         {
           "id": "W1M8",
@@ -893,7 +1839,29 @@ window.WR_LEAGUE = {
                   "ryze",
                   "yone",
                   "yasuo"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -910,7 +1878,34 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "lee-sin",
                   "ksante"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "support",
+                "playerId": "ss1-smy"
               }
             },
             {
@@ -931,7 +1926,29 @@ window.WR_LEAGUE = {
                   "yone",
                   "gwen",
                   "karma"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -948,7 +1965,42 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "varus",
                   "lucian"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "substitutions": [
+                {
+                  "teamId": "WBG",
+                  "role": "top",
+                  "out": "wbg-zihan7",
+                  "in": "wbg-yuntu"
+                }
+              ],
+              "mvp": {
+                "teamId": "WBG",
+                "role": "mid",
+                "playerId": "wbg-skyfl"
               }
             },
             {
@@ -969,7 +2021,29 @@ window.WR_LEAGUE = {
                   "gwen",
                   "aatrox",
                   "twisted-fate"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -986,10 +2060,53 @@ window.WR_LEAGUE = {
                   "vi",
                   "nami",
                   "rakan"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "jungle",
+                "playerId": "wbg-xiaog"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ],
+            "WBG": [
+              "ZiHan7",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ]
+          }
         }
       ]
     },
@@ -1030,7 +2147,29 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "varus",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1047,7 +2186,34 @@ window.WR_LEAGUE = {
                   "ryze",
                   "yone",
                   "ziggs"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "support",
+                "playerId": "tt-qingshan"
               }
             },
             {
@@ -1068,7 +2234,29 @@ window.WR_LEAGUE = {
                   "akali",
                   "miss-fortune",
                   "rell"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1085,10 +2273,53 @@ window.WR_LEAGUE = {
                   "karma",
                   "varus",
                   "morgana"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "TenMiss",
+              "Ban"
+            ],
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ]
+          }
         },
         {
           "id": "W2M2",
@@ -1120,7 +2351,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "akali",
                   "yone"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-awen",
+                  "jungle": "whg-zhou",
+                  "mid": "whg-hli",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-awen",
+                  "whg-zhou",
+                  "whg-hli",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1137,7 +2390,34 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "gwen",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             },
             {
@@ -1158,7 +2438,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "miss-fortune",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-awen",
+                  "jungle": "whg-zhou",
+                  "mid": "whg-hli",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-awen",
+                  "whg-zhou",
+                  "whg-hli",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1175,10 +2477,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "volibear",
                   "talon"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "support",
+                "playerId": "rv-tak"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WHG": [
+              "Awen",
+              "Zhou",
+              "Hli",
+              "spark",
+              "Intro"
+            ],
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ]
+          }
         },
         {
           "id": "W2M3",
@@ -1210,7 +2555,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "shen",
                   "jarvan-iv"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1227,7 +2594,34 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "poppy",
                   "ksante"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             },
             {
@@ -1248,7 +2642,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "morgana",
                   "corki"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1265,10 +2681,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "rakan",
                   "pyke"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "jungle",
+                "playerId": "tt-xiaobai"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ],
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ]
+          }
         },
         {
           "id": "W2M4",
@@ -1300,7 +2759,29 @@ window.WR_LEAGUE = {
                   "ryze",
                   "akali",
                   "yasuo"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1317,7 +2798,34 @@ window.WR_LEAGUE = {
                   "camille",
                   "poppy",
                   "ksante"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "jungle",
+                "playerId": "fp-jiangzhi"
               }
             },
             {
@@ -1338,7 +2846,29 @@ window.WR_LEAGUE = {
                   "yasuo",
                   "lucian",
                   "yunara"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1355,10 +2885,53 @@ window.WR_LEAGUE = {
                   "vi",
                   "miss-fortune",
                   "caitlyn"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "jungle",
+                "playerId": "fp-jiangzhi"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "TenMiss",
+              "Ban"
+            ],
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ]
+          }
         },
         {
           "id": "W2M5",
@@ -1390,7 +2963,29 @@ window.WR_LEAGUE = {
                   "poppy",
                   "ziggs",
                   "lee-sin"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1407,7 +3002,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "ryze",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-hli",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-hli",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "jungle",
+                "playerId": "wbg-xiaog"
               }
             },
             {
@@ -1428,7 +3050,29 @@ window.WR_LEAGUE = {
                   "ryze",
                   "jarvan-iv",
                   "poppy"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1445,10 +3089,53 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "jax",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-hli",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-intro"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-awen",
+                  "whg-hli",
+                  "whg-spark",
+                  "whg-intro"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "jungle",
+                "playerId": "wbg-xiaog"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ],
+            "WHG": [
+              "Zhou",
+              "Hli",
+              "Awen",
+              "spark",
+              "Intro"
+            ]
+          }
         },
         {
           "id": "W2M6",
@@ -1480,7 +3167,29 @@ window.WR_LEAGUE = {
                   "ryze",
                   "gwen",
                   "ziggs"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1497,7 +3206,34 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "ornn",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "mid",
+                "playerId": "fp-soldier"
               }
             },
             {
@@ -1518,7 +3254,29 @@ window.WR_LEAGUE = {
                   "ryze",
                   "yone",
                   "lucian"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1535,10 +3293,53 @@ window.WR_LEAGUE = {
                   "vi",
                   "volibear",
                   "rumble"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "bot",
+                "playerId": "fp-lin11"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ],
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ]
+          }
         },
         {
           "id": "W2M7",
@@ -1570,7 +3371,29 @@ window.WR_LEAGUE = {
                   "vi",
                   "camille",
                   "yone"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1587,7 +3410,34 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "corki",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             },
             {
@@ -1608,7 +3458,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "karma",
                   "zyra"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1625,10 +3497,53 @@ window.WR_LEAGUE = {
                   "jax",
                   "jarvan-iv",
                   "wukong"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "mid",
+                "playerId": "rv-anran9"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ],
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "TenMiss",
+              "Ban"
+            ]
+          }
         },
         {
           "id": "W2M8",
@@ -1660,7 +3575,29 @@ window.WR_LEAGUE = {
                   "vi",
                   "gragas",
                   "yone"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1677,7 +3614,34 @@ window.WR_LEAGUE = {
                   "pyke",
                   "nunu-and-willump",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "support",
+                "playerId": "tt-qingshan"
               }
             },
             {
@@ -1698,7 +3662,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "xayah",
                   "lucian"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1715,10 +3701,53 @@ window.WR_LEAGUE = {
                   "vi",
                   "volibear",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "support",
+                "playerId": "tt-qingshan"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ],
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ]
+          }
         }
       ]
     },
@@ -1759,7 +3788,29 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "bard",
                   "ziggs"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1776,7 +3827,34 @@ window.WR_LEAGUE = {
                   "vi",
                   "jax",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "jungle",
+                "playerId": "fp-jiangzhi"
               }
             },
             {
@@ -1797,7 +3875,29 @@ window.WR_LEAGUE = {
                   "gwen",
                   "xayah",
                   "yasuo"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1814,7 +3914,34 @@ window.WR_LEAGUE = {
                   "vi",
                   "jax",
                   "rumble"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "support",
+                "playerId": "wbg-en77"
               }
             },
             {
@@ -1835,7 +3962,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "ziggs",
                   "sivir"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1852,10 +4001,53 @@ window.WR_LEAGUE = {
                   "xayah",
                   "milio",
                   "lulu"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "bot",
+                "playerId": "fp-lin11"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ],
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ]
+          }
         },
         {
           "id": "W3M2",
@@ -1887,7 +4079,29 @@ window.WR_LEAGUE = {
                   "akali",
                   "varus",
                   "miss-fortune"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -1904,7 +4118,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "jax",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "bot",
+                "playerId": "kbg-xiaoma"
               }
             },
             {
@@ -1925,7 +4166,29 @@ window.WR_LEAGUE = {
                   "bard",
                   "galio",
                   "ornn"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1942,10 +4205,53 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "olaf",
                   "singed"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "mid",
+                "playerId": "kbg-jimeng"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WHG": [
+              "Zhou",
+              "Ran",
+              "Awen",
+              "spark",
+              "Tenes"
+            ],
+            "KBG": [
+              "ggg",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ]
+          }
         },
         {
           "id": "W3M3",
@@ -1977,7 +4283,29 @@ window.WR_LEAGUE = {
                   "ryze",
                   "lucian",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-xin",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-xin",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -1994,7 +4322,34 @@ window.WR_LEAGUE = {
                   "yone",
                   "corki",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "bot",
+                "playerId": "rv-berry"
               }
             },
             {
@@ -2015,7 +4370,29 @@ window.WR_LEAGUE = {
                   "yone",
                   "morgana",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-xin",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-xin",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2032,7 +4409,34 @@ window.WR_LEAGUE = {
                   "jax",
                   "ksante",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             },
             {
@@ -2053,7 +4457,29 @@ window.WR_LEAGUE = {
                   "jayce",
                   "lucian",
                   "ashe"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-xin",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-xin",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2070,10 +4496,53 @@ window.WR_LEAGUE = {
                   "jax",
                   "jarvan-iv",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "TT": [
+              "Xin",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ],
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ]
+          }
         },
         {
           "id": "W3M4",
@@ -2105,7 +4574,29 @@ window.WR_LEAGUE = {
                   "yone",
                   "varus",
                   "miss-fortune"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2122,7 +4613,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "galio",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "bot",
+                "playerId": "ss1-yuri"
               }
             },
             {
@@ -2143,7 +4661,29 @@ window.WR_LEAGUE = {
                   "camille",
                   "rumble",
                   "zyra"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-tenmiss",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-tenmiss",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2160,10 +4700,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "ksante",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "jungle",
+                "playerId": "ss1-august"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "TenMiss",
+              "Ban"
+            ],
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ]
+          }
         },
         {
           "id": "W3M5",
@@ -2195,7 +4778,29 @@ window.WR_LEAGUE = {
                   "jax",
                   "ziggs",
                   "gwen"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2212,7 +4817,34 @@ window.WR_LEAGUE = {
                   "yone",
                   "ksante",
                   "jayce"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "mid",
+                "playerId": "fp-soldier"
               }
             },
             {
@@ -2233,7 +4865,29 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "braum",
                   "bard"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2250,10 +4904,53 @@ window.WR_LEAGUE = {
                   "aurelion-sol",
                   "karma",
                   "singed"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "jungle",
+                "playerId": "fp-jiangzhi"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ],
+            "KBG": [
+              "ggg",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ]
+          }
         },
         {
           "id": "W3M6",
@@ -2285,7 +4982,29 @@ window.WR_LEAGUE = {
                   "poppy",
                   "varus",
                   "yone"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2302,7 +5021,34 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "karma",
                   "sona"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "top",
+                "playerId": "rv-xzhang"
               }
             },
             {
@@ -2323,7 +5069,29 @@ window.WR_LEAGUE = {
                   "jax",
                   "camille",
                   "xin-zhao"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-ggg",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-ggg",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2340,10 +5108,53 @@ window.WR_LEAGUE = {
                   "yone",
                   "volibear",
                   "olaf"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "KBG": [
+              "ggg",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ],
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ]
+          }
         },
         {
           "id": "W3M7",
@@ -2375,7 +5186,29 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "renekton",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2392,7 +5225,34 @@ window.WR_LEAGUE = {
                   "karma",
                   "xin-zhao",
                   "nunu-and-willump"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "jungle",
+                "playerId": "tt-xiaobai"
               }
             },
             {
@@ -2413,7 +5273,29 @@ window.WR_LEAGUE = {
                   "renekton",
                   "miss-fortune",
                   "sivir"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2430,10 +5312,61 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "jayce",
                   "lucian"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-xin",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-xin",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "substitutions": [
+                {
+                  "teamId": "TT",
+                  "role": "top",
+                  "out": "tt-dawn128",
+                  "in": "tt-xin"
+                }
+              ],
+              "mvp": {
+                "teamId": "TT",
+                "role": "top",
+                "playerId": "tt-xin"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ],
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ]
+          }
         },
         {
           "id": "W3M8",
@@ -2465,7 +5398,29 @@ window.WR_LEAGUE = {
                   "vi",
                   "lucian",
                   "lee-sin"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2482,7 +5437,34 @@ window.WR_LEAGUE = {
                   "gwen",
                   "jax",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "mid",
+                "playerId": "ss1-yousa"
               }
             },
             {
@@ -2503,7 +5485,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "lucian",
                   "corki"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2520,10 +5524,53 @@ window.WR_LEAGUE = {
                   "gwen",
                   "akali",
                   "jax"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "support",
+                "playerId": "ss1-smy"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ],
+            "WHG": [
+              "Zhou",
+              "Ran",
+              "Awen",
+              "spark",
+              "Tenes"
+            ]
+          }
         }
       ]
     },
@@ -2564,7 +5611,29 @@ window.WR_LEAGUE = {
                   "yone",
                   "nautilus",
                   "rell"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2581,7 +5650,34 @@ window.WR_LEAGUE = {
                   "poppy",
                   "gragas",
                   "karma"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "ACE",
+                "role": "mid",
+                "playerId": "ace-ziyu"
               }
             },
             {
@@ -2602,7 +5698,29 @@ window.WR_LEAGUE = {
                   "bard",
                   "corki",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2619,10 +5737,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "rumble",
                   "akali"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "ACE",
+                "role": "jungle",
+                "playerId": "ace-xs"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "Shuangyi",
+              "Ban"
+            ],
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ]
+          }
         },
         {
           "id": "W4M2",
@@ -2654,7 +5815,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "sivir",
                   "lucian"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2671,7 +5854,34 @@ window.WR_LEAGUE = {
                   "yone",
                   "camille",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "mid",
+                "playerId": "fp-soldier"
               }
             },
             {
@@ -2692,7 +5902,29 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "braum",
                   "rell"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2709,10 +5941,53 @@ window.WR_LEAGUE = {
                   "camille",
                   "xayah",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "support",
+                "playerId": "fp-awei"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ],
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ]
+          }
         },
         {
           "id": "W4M3",
@@ -2744,7 +6019,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "corki",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2761,7 +6058,34 @@ window.WR_LEAGUE = {
                   "gragas",
                   "ksante",
                   "gwen"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "jungle",
+                "playerId": "kbg-dat"
               }
             },
             {
@@ -2782,7 +6106,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "yone",
                   "hecarim"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2799,10 +6145,53 @@ window.WR_LEAGUE = {
                   "poppy",
                   "jarvan-iv",
                   "khazix"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "support",
+                "playerId": "kbg-uu"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ],
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "Shuangyi",
+              "Ban"
+            ]
+          }
         },
         {
           "id": "W4M4",
@@ -2834,7 +6223,29 @@ window.WR_LEAGUE = {
                   "jax",
                   "varus",
                   "sivir"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2851,7 +6262,34 @@ window.WR_LEAGUE = {
                   "yone",
                   "volibear",
                   "renekton"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "bot",
+                "playerId": "fp-lin11"
               }
             },
             {
@@ -2872,7 +6310,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "renekton",
                   "jax"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -2889,7 +6349,34 @@ window.WR_LEAGUE = {
                   "karma",
                   "milio",
                   "morgana"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "support",
+                "playerId": "rv-tak"
               }
             },
             {
@@ -2910,7 +6397,29 @@ window.WR_LEAGUE = {
                   "karma",
                   "talon",
                   "khazix"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2927,10 +6436,53 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "jayce",
                   "irelia"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "top",
+                "playerId": "fp-xiaomai"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ],
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ]
+          }
         },
         {
           "id": "W4M5",
@@ -2962,7 +6514,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "vi",
                   "lee-sin"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -2979,7 +6553,34 @@ window.WR_LEAGUE = {
                   "syndra",
                   "morgana",
                   "gragas"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-xin",
+                  "jungle": "tt-niuniu",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-xin",
+                  "tt-niuniu",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "bot",
+                "playerId": "tt-kk"
               }
             },
             {
@@ -3000,7 +6601,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "lee-sin",
                   "khazix"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3017,10 +6640,53 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "varus",
                   "aurora"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-xin",
+                  "jungle": "tt-niuniu",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-xin",
+                  "tt-niuniu",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "jungle",
+                "playerId": "tt-niuniu"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WHG": [
+              "Zhou",
+              "Ran",
+              "Awen",
+              "spark",
+              "Tenes"
+            ],
+            "TT": [
+              "Xin",
+              "Niuniu",
+              "Z",
+              "KK",
+              "qingshan"
+            ]
+          }
         },
         {
           "id": "W4M6",
@@ -3052,7 +6718,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "ksante",
                   "jayce"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3069,7 +6757,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "syndra",
                   "ziggs"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "jungle",
+                "playerId": "kbg-dat"
               }
             },
             {
@@ -3090,7 +6805,29 @@ window.WR_LEAGUE = {
                   "nautilus",
                   "rumble",
                   "mordekaiser"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3107,7 +6844,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "lucian",
                   "yunara"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             },
             {
@@ -3128,7 +6892,29 @@ window.WR_LEAGUE = {
                   "poppy",
                   "aatrox",
                   "jayce"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3145,10 +6931,53 @@ window.WR_LEAGUE = {
                   "akali",
                   "singed",
                   "olaf"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "bot",
+                "playerId": "rv-berry"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ],
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ]
+          }
         },
         {
           "id": "W4M7",
@@ -3180,7 +7009,29 @@ window.WR_LEAGUE = {
                   "nautilus",
                   "gragas",
                   "bard"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3197,7 +7048,34 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "volibear",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "ACE",
+                "role": "mid",
+                "playerId": "ace-ziyu"
               }
             },
             {
@@ -3218,7 +7096,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "jarvan-iv",
                   "lillia"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3235,10 +7135,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "xin-zhao",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "ACE",
+                "role": "top",
+                "playerId": "ace-goddog"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WHG": [
+              "Zhou",
+              "Ran",
+              "Awen",
+              "spark",
+              "Tenes"
+            ],
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "Shuangyi",
+              "Ban"
+            ]
+          }
         },
         {
           "id": "W4M8",
@@ -3270,7 +7213,29 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "varus",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3287,7 +7252,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "gwen",
                   "mordekaiser"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "support",
+                "playerId": "wbg-en77"
               }
             },
             {
@@ -3308,7 +7300,29 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "varus",
                   "volibear"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3325,10 +7339,53 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "jarvan-iv",
                   "lillia"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "mid",
+                "playerId": "wbg-skyfl"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ],
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ]
+          }
         }
       ]
     },
@@ -3369,7 +7426,29 @@ window.WR_LEAGUE = {
                   "gwen",
                   "nautilus",
                   "bard"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3386,7 +7465,34 @@ window.WR_LEAGUE = {
                   "syndra",
                   "lee-sin",
                   "xin-zhao"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "support",
+                "playerId": "tt-qingshan"
               }
             },
             {
@@ -3407,7 +7513,29 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "yunara",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3424,10 +7552,53 @@ window.WR_LEAGUE = {
                   "nidalee",
                   "varus",
                   "bard"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "jungle",
+                "playerId": "tt-xiaobai"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ],
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ]
+          }
         },
         {
           "id": "W5M2",
@@ -3459,7 +7630,29 @@ window.WR_LEAGUE = {
                   "ambessa",
                   "jarvan-iv",
                   "renekton"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3476,7 +7669,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "varus",
                   "xayah"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "jungle",
+                "playerId": "rv-huiba"
               }
             },
             {
@@ -3497,7 +7717,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "rakan",
                   "maokai"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3514,10 +7756,53 @@ window.WR_LEAGUE = {
                   "jax",
                   "nidalee",
                   "gwen"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "top",
+                "playerId": "rv-xzhang"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "Shuangyi",
+              "Ban"
+            ],
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ]
+          }
         },
         {
           "id": "W5M3",
@@ -3549,7 +7834,29 @@ window.WR_LEAGUE = {
                   "akali",
                   "syndra",
                   "jax"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3566,7 +7873,34 @@ window.WR_LEAGUE = {
                   "rumble",
                   "galio",
                   "renekton"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "bot",
+                "playerId": "ss1-yuri"
               }
             },
             {
@@ -3587,7 +7921,29 @@ window.WR_LEAGUE = {
                   "nautilus",
                   "syndra",
                   "twisted-fate"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3604,7 +7960,34 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "jax",
                   "rumble"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WHG",
+                "role": "jungle",
+                "playerId": "whg-ran"
               }
             },
             {
@@ -3625,7 +8008,29 @@ window.WR_LEAGUE = {
                   "syndra",
                   "fiora",
                   "nasus"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3642,10 +8047,53 @@ window.WR_LEAGUE = {
                   "akali",
                   "yasuo",
                   "nami"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "mid",
+                "playerId": "ss1-yousa"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WHG": [
+              "Zhou",
+              "Ran",
+              "Awen",
+              "spark",
+              "Tenes"
+            ],
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ]
+          }
         },
         {
           "id": "W5M4",
@@ -3677,7 +8125,29 @@ window.WR_LEAGUE = {
                   "gragas",
                   "lee-sin",
                   "galio"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3694,7 +8164,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "jayce",
                   "ksante"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "jungle",
+                "playerId": "wbg-xiaog"
               }
             },
             {
@@ -3715,7 +8212,29 @@ window.WR_LEAGUE = {
                   "camille",
                   "varus",
                   "yunara"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3732,7 +8251,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "lee-sin",
                   "rengar"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "bot",
+                "playerId": "kbg-xiaoma"
               }
             },
             {
@@ -3753,7 +8299,29 @@ window.WR_LEAGUE = {
                   "poppy",
                   "ornn",
                   "alistar"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3770,10 +8338,53 @@ window.WR_LEAGUE = {
                   "lee-sin",
                   "milio",
                   "nami"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "mid",
+                "playerId": "wbg-skyfl"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ],
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ]
+          }
         },
         {
           "id": "W5M5",
@@ -3805,7 +8416,29 @@ window.WR_LEAGUE = {
                   "yone",
                   "gwen",
                   "syndra"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3822,7 +8455,34 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "lee-sin",
                   "khazix"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "RV",
+                "role": "mid",
+                "playerId": "rv-anran9"
               }
             },
             {
@@ -3843,7 +8503,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "yasuo",
                   "renekton"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3860,7 +8542,34 @@ window.WR_LEAGUE = {
                   "poppy",
                   "gwen",
                   "aatrox"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "mid",
+                "playerId": "fp-soldier"
               }
             },
             {
@@ -3881,7 +8590,29 @@ window.WR_LEAGUE = {
                   "akali",
                   "milio",
                   "morgana"
-                ]
+                ],
+                "lineup": {
+                  "top": "rv-xzhang",
+                  "jungle": "rv-huiba",
+                  "mid": "rv-anran9",
+                  "bot": "rv-berry",
+                  "support": "rv-tak"
+                },
+                "pickPlayers": [
+                  "rv-xzhang",
+                  "rv-huiba",
+                  "rv-anran9",
+                  "rv-berry",
+                  "rv-tak"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -3898,10 +8629,53 @@ window.WR_LEAGUE = {
                   "vi",
                   "bard",
                   "rakan"
-                ]
+                ],
+                "lineup": {
+                  "top": "fp-xiaomai",
+                  "jungle": "fp-jiangzhi",
+                  "mid": "fp-soldier",
+                  "bot": "fp-lin11",
+                  "support": "fp-awei"
+                },
+                "pickPlayers": [
+                  "fp-xiaomai",
+                  "fp-jiangzhi",
+                  "fp-soldier",
+                  "fp-lin11",
+                  "fp-awei"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "FP",
+                "role": "jungle",
+                "playerId": "fp-jiangzhi"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "RV": [
+              "Xzhang",
+              "Huiba",
+              "Anran9",
+              "Berry",
+              "Tak"
+            ],
+            "FP": [
+              "Xiaomai",
+              "Jiangzhi",
+              "Soldier",
+              "lin11",
+              "Awei"
+            ]
+          }
         },
         {
           "id": "W5M6",
@@ -3933,7 +8707,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "bard",
                   "syndra"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3950,7 +8746,34 @@ window.WR_LEAGUE = {
                   "poppy",
                   "gragas",
                   "varus"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-yuntu",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-yuntu",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "TT",
+                "role": "mid",
+                "playerId": "tt-z"
               }
             },
             {
@@ -3971,7 +8794,29 @@ window.WR_LEAGUE = {
                   "karma",
                   "aurora",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -3988,7 +8833,42 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "galio",
                   "rakan"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "substitutions": [
+                {
+                  "teamId": "WBG",
+                  "role": "top",
+                  "out": "wbg-yuntu",
+                  "in": "wbg-zihan7"
+                }
+              ],
+              "mvp": {
+                "teamId": "WBG",
+                "role": "jungle",
+                "playerId": "wbg-xiaog"
               }
             },
             {
@@ -4009,7 +8889,29 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "mordekaiser",
                   "ambessa"
-                ]
+                ],
+                "lineup": {
+                  "top": "tt-dawn128",
+                  "jungle": "tt-xiaobai",
+                  "mid": "tt-z",
+                  "bot": "tt-kk",
+                  "support": "tt-qingshan"
+                },
+                "pickPlayers": [
+                  "tt-dawn128",
+                  "tt-xiaobai",
+                  "tt-z",
+                  "tt-kk",
+                  "tt-qingshan"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -4026,10 +8928,53 @@ window.WR_LEAGUE = {
                   "olaf",
                   "nami",
                   "milio"
-                ]
+                ],
+                "lineup": {
+                  "top": "wbg-zihan7",
+                  "jungle": "wbg-xiaog",
+                  "mid": "wbg-skyfl",
+                  "bot": "wbg-7yun",
+                  "support": "wbg-en77"
+                },
+                "pickPlayers": [
+                  "wbg-zihan7",
+                  "wbg-xiaog",
+                  "wbg-skyfl",
+                  "wbg-7yun",
+                  "wbg-en77"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "WBG",
+                "role": "jungle",
+                "playerId": "wbg-xiaog"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "TT": [
+              "Dawn128",
+              "Xiaobai",
+              "Z",
+              "KK",
+              "qingshan"
+            ],
+            "WBG": [
+              "Yuntu",
+              "XiaoG",
+              "SkyFL",
+              "7yun",
+              "en77"
+            ]
+          }
         },
         {
           "id": "W5M7",
@@ -4061,7 +9006,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "bard",
                   "karma"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -4078,7 +9045,34 @@ window.WR_LEAGUE = {
                   "vi",
                   "akali",
                   "ryze"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "bot",
+                "playerId": "kbg-xiaoma"
               }
             },
             {
@@ -4099,7 +9093,29 @@ window.WR_LEAGUE = {
                   "poppy",
                   "nami",
                   "karma"
-                ]
+                ],
+                "lineup": {
+                  "top": "kbg-xzhen",
+                  "jungle": "kbg-dat",
+                  "mid": "kbg-jimeng",
+                  "bot": "kbg-xiaoma",
+                  "support": "kbg-uu"
+                },
+                "pickPlayers": [
+                  "kbg-xzhen",
+                  "kbg-dat",
+                  "kbg-jimeng",
+                  "kbg-xiaoma",
+                  "kbg-uu"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -4116,10 +9132,53 @@ window.WR_LEAGUE = {
                   "bard",
                   "jax",
                   "volibear"
-                ]
+                ],
+                "lineup": {
+                  "top": "whg-zhou",
+                  "jungle": "whg-ran",
+                  "mid": "whg-awen",
+                  "bot": "whg-spark",
+                  "support": "whg-tenes"
+                },
+                "pickPlayers": [
+                  "whg-zhou",
+                  "whg-ran",
+                  "whg-awen",
+                  "whg-spark",
+                  "whg-tenes"
+                ],
+                "pickRoles": [
+                  "mid",
+                  "jungle",
+                  "top",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "KBG",
+                "role": "mid",
+                "playerId": "kbg-jimeng"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "KBG": [
+              "Xzhen",
+              "DaT",
+              "Jimeng",
+              "Xiaoma",
+              "Uu"
+            ],
+            "WHG": [
+              "Zhou",
+              "Ran",
+              "Awen",
+              "spark",
+              "Tenes"
+            ]
+          }
         },
         {
           "id": "W5M8",
@@ -4151,7 +9210,29 @@ window.WR_LEAGUE = {
                   "nunu-and-willump",
                   "xayah",
                   "corki"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "red",
@@ -4168,7 +9249,34 @@ window.WR_LEAGUE = {
                   "ezreal",
                   "bard",
                   "akali"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "mid",
+                "playerId": "ss1-yousa"
               }
             },
             {
@@ -4189,7 +9297,29 @@ window.WR_LEAGUE = {
                   "bard",
                   "lucian",
                   "camille"
-                ]
+                ],
+                "lineup": {
+                  "top": "ss1-meng7",
+                  "jungle": "ss1-august",
+                  "mid": "ss1-yousa",
+                  "bot": "ss1-yuri",
+                  "support": "ss1-smy"
+                },
+                "pickPlayers": [
+                  "ss1-meng7",
+                  "ss1-august",
+                  "ss1-yousa",
+                  "ss1-yuri",
+                  "ss1-smy"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
               },
               "team2": {
                 "side": "blue",
@@ -4206,10 +9336,53 @@ window.WR_LEAGUE = {
                   "ryze",
                   "khazix",
                   "hecarim"
-                ]
+                ],
+                "lineup": {
+                  "top": "ace-goddog",
+                  "jungle": "ace-xs",
+                  "mid": "ace-ziyu",
+                  "bot": "ace-shuangyi",
+                  "support": "ace-ban"
+                },
+                "pickPlayers": [
+                  "ace-goddog",
+                  "ace-xs",
+                  "ace-ziyu",
+                  "ace-shuangyi",
+                  "ace-ban"
+                ],
+                "pickRoles": [
+                  "top",
+                  "jungle",
+                  "mid",
+                  "bot",
+                  "support"
+                ],
+                "pickOrder": "legacy-role"
+              },
+              "mvp": {
+                "teamId": "SS1",
+                "role": "support",
+                "playerId": "ss1-smy"
               }
             }
-          ]
+          ],
+          "startingLineups": {
+            "SS1": [
+              "Meng7",
+              "August",
+              "Yousa",
+              "Yuri",
+              "Smy"
+            ],
+            "ACE": [
+              "Goddog",
+              "Xs",
+              "ziyu",
+              "Shuangyi",
+              "Ban"
+            ]
+          }
         }
       ]
     },

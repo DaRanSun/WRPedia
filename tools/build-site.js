@@ -5,7 +5,7 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'dist');
-const pages = ['index.html', 'schedule.html', 'stats.html', 'patches.html', 'picks.html', 'teams.html', 'team.html'];
+const pages = ['index.html', 'schedule.html', 'stats.html', 'patches.html', 'picks.html', 'teams.html', 'team.html', 'player.html'];
 
 fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });

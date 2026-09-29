@@ -95,8 +95,8 @@
     }
 
     function draftSideHtml(side, selected) {
-        const ordered = Array.isArray(side.pickRoles);
-        let html = '<div class="bans-label">选用 · ' + (ordered ? '按队内选取顺序' : '按分路排列') + '</div><div class="history-picks">';
+        const ordered = Array.isArray(side.pickRoles) && side.pickOrder !== 'legacy-role';
+        let html = '<div class="bans-label">选用 · ' + (ordered ? '按队内选取顺序' : '标注实际分路') + '</div><div class="history-picks">';
         (side.picks || []).forEach(function (slug, index) {
             const chosen = selected === slug, shares = pickRoleShares(side, index);
             const player = getPlayer((side.pickPlayers || [])[index]);

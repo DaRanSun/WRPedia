@@ -95,3 +95,39 @@
     .team-match-opponent, .team-match-patch { font-size: 12px; }
     .team-match-link { display: none; }
 }
+/* Independent player profiles and links from the complete roster. */
+.roster-card:hover, .team-mvp-row:hover { border-color: var(--accent); color: var(--text); text-decoration: none; background: var(--surface-2); }
+.player-open-hint { color: var(--link); margin-top: auto; padding-top: 6px; }
+.team-mvp-row { grid-template-columns: 20px minmax(0, 1fr) minmax(55px, auto) 25px; }
+.team-mvp-row strong { overflow-wrap: anywhere; }
+.team-mvp-row > span:nth-child(3) { max-width: 125px; }
+.player-hero > .team-logo { width: 80px; height: 80px; }
+.player-role-counts { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.player-role-counts > span { padding: 7px 12px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 4px; font-size: 12px; color: var(--text-muted); }
+.player-role-counts b { color: var(--text-strong); margin-left: 8px; }
+.player-games-table { width: 100%; min-width: 640px; }
+.player-games-table th { text-align: left; }
+.player-games-table td { vertical-align: middle; }
+.player-games-table small { display: block; color: var(--text-muted); font-size: 11px; margin-top: 5px; }
+.player-result { padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.player-result.won { background: var(--bg-up); border-color: var(--bg-up-border); }
+.player-result.lost { background: var(--bg-down); border-color: var(--bg-down-border); }
+.player-mvp-badge { color: var(--core-text, #b07812); background: var(--core-bg, #fff2bf); border: 1px solid var(--core-border, #bd9446); border-radius: 3px; font-size: 10px; font-weight: 700; padding: 3px 5px; margin-right: 7px; }
+.player-page section[id] { scroll-margin-top: 20px; }
+@media (max-width: 600px) {
+    .player-games-table, .player-games-table tbody { display: block; min-width: 0; width: 100%; }
+    .player-games-table { border: 0; }
+    .player-games-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .player-games-table tbody tr { display: grid; grid-template-columns: 1fr 1.25fr 1fr; margin: 0 0 12px; border: 1px solid var(--border-strong); border-radius: 5px; overflow: hidden; }
+    .player-games-table td { display: block; border: 0; padding: 10px; min-width: 0; font-size: 12px; text-align: left; }
+    .player-games-table td:first-child { grid-column: 1 / -1; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+    .player-games-table td:nth-child(2)::before, .player-games-table td:nth-child(3)::before, .player-games-table td:nth-child(4)::before { display: block; font-size: 10px; color: var(--text-muted); margin-bottom: 7px; }
+    .player-games-table td:nth-child(2)::before { content: '实际位置'; }
+    .player-games-table td:nth-child(3)::before { content: '英雄'; }
+    .player-games-table td:nth-child(4)::before { content: '结果'; }
+    .player-games-table td:nth-child(5) { grid-column: 1 / 3; align-self: center; color: var(--text-muted); }
+    .player-games-table td:nth-child(5)::before { content: '时长 · '; }
+    .player-games-table td:nth-child(6) { display: flex; align-items: center; justify-content: flex-end; padding-left: 0; }
+    .player-games-table .champ-cell { gap: 5px; white-space: normal; }
+    .player-games-table .champ-icon { width: 24px; height: 24px; flex-shrink: 0; }
+}

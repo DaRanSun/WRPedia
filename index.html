@@ -6,6 +6,7 @@
     <title>WRpedia · 英雄联盟手游 2026 秋季赛</title>
     <script src="assets/js/theme.js"></script>
     <link rel="stylesheet" href="assets/css/wrpedia.css">
+    <link rel="stylesheet" href="assets/css/overview.css">
 </head>
 <body data-page="overview">
 <header class="site-header">
@@ -37,8 +38,25 @@
         <div class="sub">Wild Rift League 2026 Autumn · 一个仿 Liquipedia 风格的独立数据站</div>
     </div>
 
+    <div class="overview-dashboard">
+        <section class="overview-section" aria-labelledby="upcoming-heading">
+            <div class="overview-section-head"><h2 id="upcoming-heading">接下来的赛程<small>按比赛时间排列 · UTC+8</small></h2><a href="schedule.html#matchlist-root">全部赛程 →</a></div>
+            <div id="overview-upcoming"></div>
+        </section>
+        <div class="overview-leaderboards">
+            <section class="overview-section" aria-labelledby="leaders-heading">
+                <div class="overview-section-head"><h2 id="leaders-heading">季后赛区<small>当前积分榜前四名</small></h2><a href="schedule.html#standings-wrap">完整积分榜 →</a></div>
+                <div id="overview-standings"></div><p class="scope-note">随赛果更新，当前排名不代表已锁定晋级。</p>
+            </section>
+            <section class="overview-section" aria-labelledby="mvps-heading">
+                <div class="overview-section-head"><h2 id="mvps-heading">选手 MVP 榜<small>前五名 · 截止位同分全部展示</small></h2><span class="text-muted">秋季赛</span></div>
+                <div id="overview-mvps"></div>
+            </section>
+        </div>
+    </div>
+
     <div class="cards">
-        <a class="card" href="teams.html"><h3>Teams / 战队</h3><p>8 支战队 · 阵容与轮换、选手英雄池、队内 MVP 和禁用倾向</p></a>
+        <a class="card" href="teams.html"><h3>Teams / 战队</h3><p>8 支战队 · 全部选手、英雄池、队内 MVP 和禁用倾向</p></a>
         <a class="card" href="schedule.html">
             <h3>Group Stage / 小组赛</h3>
             <p>8 队双循环 BO3 · 双边无畏征召 · 积分榜与全部赛程、BP 详情</p>
@@ -75,9 +93,15 @@
     WRpedia 是非官方爱好者站点，与 Riot Games 及 Liquipedia 无关。<br>
     英雄头像与图片版权归 Riot Games 所有，数据仅用于个人学习与展示。
 </footer>
+<script src="data/champions.js"></script>
+<script src="data/champion-locales.js"></script>
+<script src="data/schedule.js"></script>
 <script src="data/champion-rules.js"></script>
 <script src="data/players.js"></script>
 <script src="data/site.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/team-stats.js"></script>
+<script src="assets/js/league-summary.js"></script>
+<script src="assets/js/overview.js"></script>
 </body>
 </html>

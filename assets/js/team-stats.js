@@ -3,6 +3,26 @@
     const WR = window.WR;
     function record() { return { games: 0, wins: 0, losses: 0 }; }
     function add(result, won) { result.games++; result[won ? 'wins' : 'losses']++; }
+    const roleOrder = Object.keys(WR.roleNames);
+    function rankedRoles(stat) {
+        return Object.entries(stat.roles).filter(([, n]) => n > 0)
+            .sort((a, b) => b[1] - a[1] || roleOrder.indexOf(a[0]) - roleOrder.indexOf(b[0]));
+    }
+    function roleText(stat) { return rankedRoles(stat).map(([role]) => WR.roleNames[role]).join('／') || '暂无出场'; }
+    function playerOrder(a, b) {
+        const ar = rankedRoles(a), br = rankedRoles(b);
+        return (ar.length ? roleOrder.indexOf(ar[0][0]) : 5) - (br.length ? roleOrder.indexOf(br[0][0]) : 5) ||
+            b.games - a.games || a.player.name.localeCompare(b.player.name);
+    }
+    function durationSeconds(length) {
+        const match = /^(\d+):([0-5]\d)$/.exec(length || '');
+        return match ? Number(match[1]) * 60 + Number(match[2]) : null;
+    }
+    function formatDuration(seconds) {
+        if (seconds == null || !Number.isFinite(seconds)) return '—';
+        const rounded = Math.round(seconds);
+        return Math.floor(rounded / 60) + ':' + String(rounded % 60).padStart(2, '0');
+    }
     function compute(teamId, version) {
         version = version || 'all';
         const team = WR.teamById(teamId);
@@ -10,7 +30,8 @@
         const players = Object.fromEntries(WR.players.filter(p => p.teamId === teamId).map(p => [p.id,
             { player: p, ...record(), mvp: 0, champions: {}, roles: {} }]));
         const res = { team, version, ...record(), seriesWins: 0, seriesLosses: 0, rosterGames: 0, mvpRecorded: 0,
-            players, schedule: [], sides: { blue: { ...record(), bans: {}, emptyBans: 0 }, red: { ...record(), bans: {}, emptyBans: 0 } } };
+            players, schedule: [], durations: { all: [], wins: [], losses: [] },
+            sides: { blue: { ...record(), bans: {}, emptyBans: 0 }, red: { ...record(), bans: {}, emptyBans: 0 } } };
         (WR.league.rounds || []).forEach(function (round) {
             (round.matches || []).forEach(function (match) {
                 const teamIndex = match.opponent1 === teamId ? 1 : match.opponent2 === teamId ? 2 : 0;
@@ -26,6 +47,8 @@
                 games.forEach(function (game) {
                     const won = game.winner === teamIndex, side = game['team' + teamIndex], sideStats = res.sides[side.side];
                     add(res, won); add(sideStats, won);
+                    const seconds = durationSeconds(game.length);
+                    if (seconds != null) { res.durations.all.push(seconds); res.durations[won ? 'wins' : 'losses'].push(seconds); }
                     // Team tendencies use actual recorded bans / games on this side, not ban slot share.
                     (side.bans || []).forEach(function (slug) {
                         if (slug === null) sideStats.emptyBans++;
@@ -52,7 +75,9 @@
                 });
             });
         });
+        res.averageDuration = Object.fromEntries(Object.entries(res.durations).map(([key, values]) =>
+            [key, values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null]));
         return res;
     }
-    WR.TeamStats = Object.freeze({ compute });
+    WR.TeamStats = Object.freeze({ compute, rankedRoles, roleText, playerOrder, durationSeconds, formatDuration });
 })();

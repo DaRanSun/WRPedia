@@ -4,7 +4,8 @@
 
     function query(filters) {
         filters = filters || {};
-        if (!WR.getChampion(filters.champion)) return [];
+        if (filters.champion && !WR.getChampion(filters.champion)) return [];
+        if (!filters.champion && !WR.getPlayer(filters.playerId)) return [];
         const result = [];
         (WR.league.rounds || []).forEach(function (round) {
             (round.matches || []).forEach(function (match) {
@@ -15,14 +16,16 @@
                     [1, 2].forEach(function (index) {
                         const team = match["opponent" + index], side = game["team" + index];
                         if (filters.team && filters.team !== "all" && filters.team !== team) return;
-                        const pickIndex = (side.picks || []).indexOf(filters.champion);
+                        const pickIndex = filters.playerId ? (side.pickPlayers || []).indexOf(filters.playerId) : (side.picks || []).indexOf(filters.champion);
                         if (pickIndex < 0) return;
+                        const champion = side.picks[pickIndex];
+                        if (filters.champion && filters.champion !== champion) return;
                         const player = WR.getPlayer((side.pickPlayers || [])[pickIndex]);
                         if (filters.playerId && (!player || player.id !== filters.playerId)) return;
                         const roleShares = WR.pickRoleShares(side, pickIndex);
                         result.push({ round: round, match: match, game: game, gameIndex: gi, team: team,
                             teamIndex: index, pickIndex: pickIndex, roleIndex: pickIndex, roleShares: roleShares, role: WR.roleLabel(roleShares), patch: patch,
-                            won: game.winner === index, champion: filters.champion, player: player });
+                            won: game.winner === index, champion: champion, player: player });
                     });
                 });
             });

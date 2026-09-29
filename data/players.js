@@ -4,8 +4,7 @@ window.WR_PLAYERS = [
     "id": "fp-xhao",
     "teamId": "FP",
     "name": "Xhao",
-    "role": "top",
-    "status": "替补"
+    "role": "top"
   },
   {
     "id": "fp-jiangzhi",
@@ -95,15 +94,13 @@ window.WR_PLAYERS = [
     "id": "tt-xin",
     "teamId": "TT",
     "name": "Xin",
-    "role": "top",
-    "status": "轮换"
+    "role": "top"
   },
   {
     "id": "tt-niuniu",
     "teamId": "TT",
     "name": "Niuniu",
-    "role": "jungle",
-    "status": "轮换"
+    "role": "jungle"
   },
   {
     "id": "tt-z",
@@ -247,27 +244,60 @@ window.WR_PLAYERS = [
     "id": "fp-xiaomai",
     "teamId": "FP",
     "name": "Xiaomai",
-    "role": "top",
-    "status": "此前首发"
+    "role": "top"
   },
   {
     "id": "tt-dawn128",
     "teamId": "TT",
     "name": "Dawn128",
-    "role": "top",
-    "status": "轮换"
+    "role": "top"
   },
   {
     "id": "tt-xiaobai",
     "teamId": "TT",
     "name": "Xiaobai",
-    "role": "jungle",
-    "status": "轮换"
+    "role": "jungle"
   },
   {
     "id": "wbg-zihan7",
     "teamId": "WBG",
     "name": "ZiHan7",
     "role": "top"
+  },
+  {
+    "id": "rv-tbb",
+    "teamId": "RV",
+    "name": "Tbb",
+    "role": "top"
+  },
+  {
+    "id": "kbg-ggg",
+    "teamId": "KBG",
+    "name": "ggg",
+    "role": "top"
+  },
+  {
+    "id": "whg-adong",
+    "teamId": "WHG",
+    "name": "adong",
+    "role": "jungle"
+  },
+  {
+    "id": "whg-intro",
+    "teamId": "WHG",
+    "name": "Intro",
+    "role": "support"
+  },
+  {
+    "id": "whg-hli",
+    "teamId": "WHG",
+    "name": "Hli",
+    "role": "mid"
+  },
+  {
+    "id": "ace-tenmiss",
+    "teamId": "ACE",
+    "name": "TenMiss",
+    "role": "bot"
   }
 ];

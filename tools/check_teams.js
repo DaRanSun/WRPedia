@@ -8,8 +8,8 @@ for (const file of ['data/champions.js', 'data/champion-locales.js', 'data/champ
 }
 const WR = ctx.window.WR, plain = value => JSON.parse(JSON.stringify(value)), roles = Object.keys(WR.roleNames);
 const snapshot = JSON.stringify(WR.league), matches = WR.league.rounds.flatMap(r => r.matches), find = id => matches.find(m => m.id === id);
-assert.equal(ctx.window.WR_SITE.version, '1.2.0');
-assert.equal(WR.players.length, 44); assert.equal(new Set(WR.players.map(p => p.id)).size, 44);
+assert.equal(ctx.window.WR_SITE.version, '1.3.0');
+assert.equal(WR.players.length, 50); assert.equal(new Set(WR.players.map(p => p.id)).size, 50);
 assert.equal(WR.resolvePlayer('FP', 'xhao').id, 'fp-xhao');
 assert.equal(WR.resolvePlayer('TT', 'niuniu').id, 'tt-niuniu');
 assert.equal(WR.resolvePlayer('WHG', 'tenes').id, 'whg-tenes');
@@ -76,8 +76,8 @@ let playerGames = 0, mvpCount = 0;
 for (const t of WR.league.teams) {
     const all = WR.TeamStats.compute(t.id), before = WR.TeamStats.compute(t.id, '7.2'), current = WR.TeamStats.compute(t.id, '7.3');
     assert.equal(all.schedule.length, 14); assert.equal(all.games, before.games + current.games);
-    assert.equal(before.rosterGames, 0); assert.equal(before.mvpRecorded, 0);
-    assert.ok(Object.values(before.players).every(p => p.games === 0 && !Object.keys(p.champions).length));
+    assert.equal(before.rosterGames, before.games); assert.equal(before.mvpRecorded, before.wins);
+    assert.equal(Object.values(before.players).reduce((n, p) => n + p.games, 0), before.games * 5);
     assert.equal(Object.values(current.players).reduce((n, p) => n + p.games, 0), current.games * 5);
     for (const p of Object.values(current.players)) {
         assert.equal(p.wins + p.losses, p.games); assert.ok(p.mvp <= p.wins);
@@ -102,4 +102,4 @@ WR.league.rounds = [{ patch: '7.3', matches: [{ opponent1: 'FP', opponent2: 'TT'
 assert.equal(WR.TeamStats.compute('FP').players['fp-xhao'].games, 0);
 assert.equal(WR.TeamStats.compute('FP').rosterGames, 0);
 WR.league.rounds = rounds;
-console.log('PASS: 109 games, 44 unique players, explicit ownership, substitutes persist, lane swaps, player hero wins, side bans, 17 MVPs, historical missingness and query reconciliation.');
+console.log('PASS: 109 games, 50 unique players, explicit ownership, substitutes persist, lane swaps, player hero wins, side bans, 17 MVPs, history coverage and query reconciliation.');

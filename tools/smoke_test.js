@@ -170,6 +170,7 @@ load("data/champion-rules.js");
 load("assets/js/common.js");
 load("assets/js/bp-tiers.js");
 load("assets/js/stats.js");
+load("assets/js/league-summary.js");
 load("assets/js/schedule.js");
 
 // ---------- run page scripts ----------

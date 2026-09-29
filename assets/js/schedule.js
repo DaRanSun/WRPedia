@@ -19,52 +19,11 @@
         }).join("") + "</ul>";
     }
 
-    function computeStandings() {
-        const rows = {};
-        (league.teams || []).forEach(function (t) {
-            rows[t.id] = { team: t, seriesW: 0, seriesL: 0, gameW: 0, gameL: 0 };
-        });
-
-        (league.rounds || []).forEach(function (round) {
-            (round.matches || []).forEach(function (m) {
-                const games = (m.games || []).filter(function (g) {
-                    return g.winner === 1 || g.winner === 2;
-                });
-                if (!games.length) return;
-                const w1 = games.filter(function (g) { return g.winner === 1; }).length;
-                const w2 = games.length - w1;
-                if (rows[m.opponent1]) {
-                    rows[m.opponent1].gameW += w1;
-                    rows[m.opponent1].gameL += w2;
-                }
-                if (rows[m.opponent2]) {
-                    rows[m.opponent2].gameW += w2;
-                    rows[m.opponent2].gameL += w1;
-                }
-                if (w1 !== w2) {
-                    if (rows[m.opponent1]) w1 > w2 ? rows[m.opponent1].seriesW++ : rows[m.opponent1].seriesL++;
-                    if (rows[m.opponent2]) w2 > w1 ? rows[m.opponent2].seriesW++ : rows[m.opponent2].seriesL++;
-                }
-            });
-        });
-
-        const arr = Object.keys(rows).map(function (k) { return rows[k]; });
-        arr.sort(function (a, b) {
-            if (b.seriesW !== a.seriesW) return b.seriesW - a.seriesW;
-            const ad = (a.seriesW - a.seriesL), bd = (b.seriesW - b.seriesL);
-            if (bd !== ad) return bd - ad;
-            if ((b.gameW - b.gameL) !== (a.gameW - a.gameL)) return (b.gameW - b.gameL) - (a.gameW - a.gameL);
-            if (b.gameW !== a.gameW) return b.gameW - a.gameW;
-            return a.team.name.localeCompare(b.team.name, "zh");
-        });
-        return arr;
-    }
-
     function renderStandings() {
         const el = document.getElementById("standings-body");
         const wrap = document.getElementById("standings-wrap");
         if (!el || !wrap) return;
-        const rows = computeStandings();
+        const rows = WR.LeagueSummary.standings();
         if (!rows.length) {
             el.innerHTML = '<tr><td colspan="6" class="empty-note">暂无队伍数据</td></tr>';
             return;

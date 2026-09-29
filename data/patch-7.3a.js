@@ -1,6 +1,8 @@
-// Standard Rift changes supplied by the site owner. Release date is not an announcement date.
+// Standard Rift changes supplied by the site owner; official Riot article verified September 30.
 window.WR_PATCHES.push({
-    id: '7.3a', major: '7.3', releaseDate: '2026-09-29', weeks: '第 7 周', status: '即将采用',
+    id: '7.3a', major: '7.3', published: '2026-09-29',
+    source: 'https://wildrift.leagueoflegends.com/en-us/news/game-updates/wild-rift-patch-notes-7-3a/',
+    releaseDate: '2026-09-29', weeks: '第 7 周', status: '即将采用',
     postseason: '季后赛版本待定',
     title: '热门中射降温，刷野与推进节奏调整',
     summary: '彗、辛德拉与墨菲特削弱，凯特琳、赛娜攻速收益下调；惩戒灼烧减弱，水晶生命与镀层双抗回调。',
