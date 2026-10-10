@@ -752,7 +752,7 @@
         let html = '<div class="editor"><div class="editor-head"><a class="btn" href="admin/#' + S.from + '">← 返回列表</a><div class="editor-title"><h1>' + esc(match.id) + ' · ' +
             esc(match.opponent1) + ' vs ' + esc(match.opponent2) + (match.label ? ' <small>' + esc(match.label) + '</small>' : '') + '</h1><div class="sub">' + esc(match.date || '') + ' · BO' + (match.bestOf || 3) +
             ' · 版本 ' + esc(currentPatch() || '待定') + ' · ' + esc(round.title || '') +
-            (seeds[match.opponent1] && seeds[match.opponent2] ? ' · 小组赛排名 ' + esc(match.opponent1) + ' #' + seeds[match.opponent1] + ' / ' + esc(match.opponent2) + ' #' + seeds[match.opponent2] : '') + '</div></div>' +
+            (seeds[match.opponent1] && seeds[match.opponent2] ? ' · 常规赛排名 ' + esc(match.opponent1) + ' #' + seeds[match.opponent1] + ' / ' + esc(match.opponent2) + ' #' + seeds[match.opponent2] : '') + '</div></div>' +
             '<div class="editor-actions"><span class="dirty-flag" hidden>未保存</span><button type="button" class="btn accent big" data-action="save"' + (S.saving ? ' disabled' : '') + '>' + (S.saving ? '保存中…' : '保存本场') + '</button></div></div>';
         if (S.draftOffer) {
             html += '<div class="notice info draft-offer">发现 ' + new Date(S.draftOffer.at).toLocaleString('zh-CN') + ' 的未保存草稿。' +

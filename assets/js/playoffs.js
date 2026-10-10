@@ -59,7 +59,7 @@
             '<div class="bracket-link" aria-hidden="true"><i class="elbow"></i><i class="stem"></i></div>' +
             '<div class="bracket-final">' + matchBox(round, final) +
             (champion ? '<div class="bracket-champion"><span>冠军</span>' + WR.teamBadge(champion[1]) + "<b>" + esc(WR.teamName(champion[1])) + "</b></div>" : "") + "</div>" +
-            '<p class="bracket-legend"># 为小组赛排名。半决赛中排名上位的队伍拥有第一局的选边权。点击对阵查看每小局 BP。</p><div class="bracket-gap"></div>' +
+            '<p class="bracket-legend"># 为常规赛排名。半决赛中排名上位的队伍拥有第一局的选边权。点击对阵查看每小局 BP。</p><div class="bracket-gap"></div>' +
             (third ? '<div class="bracket-third"><div class="bracket-title">季军争夺战<small>' + esc(dayLabel(third)) + "</small></div>" + matchBox(round, third) + "</div>" : "<div></div>") +
             "</div>";
     }

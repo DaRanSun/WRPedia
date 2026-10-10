@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule · WRpedia 2026 秋季赛</title>
+    <title>Schedule · 常规赛 · WRpedia 2026 秋季赛</title>
     <script src="assets/js/theme.js"></script>
     <link rel="stylesheet" href="assets/css/wrpedia.css">
 </head>
@@ -23,7 +23,6 @@
         <nav class="tabs">
             <a href="index.html" data-page="overview">Overview / 概览</a>
             <a href="schedule.html" data-page="schedule">Schedule / 赛程</a>
-            <a href="playoffs.html" data-page="playoffs">Playoffs / 季后赛</a>
             <a href="teams.html" data-page="teams">Teams / 战队</a>
             <a href="picks.html" data-page="picks">Pick History / 选用查询</a>
             <a href="stats.html" data-page="stats">Statistics / 数据</a>
@@ -35,8 +34,12 @@
 <div class="wrap page">
     <div class="page-title">
         <h1>Schedule</h1>
-        <div class="sub">2026 英雄联盟手游超级联赛秋季赛 · 赛程（小组赛 8 队双循环 BO3 · 季后赛 4 队 BO5）</div>
+        <div class="sub">2026 英雄联盟手游超级联赛秋季赛 · 赛程</div>
     </div>
+    <nav class="version-tabs stage-tabs" aria-label="赛程阶段">
+        <a href="schedule.html" class="active" aria-current="page">常规赛 <span>8 队双循环 · BO3</span></a>
+        <a href="playoffs.html">季后赛 <span>前 4 名 · BO5 · 对阵图</span></a>
+    </nav>
     <div id="demo-notice"></div>
 
     <div class="content-grid">
@@ -46,7 +49,7 @@
 
             <h2 class="section">Results <span class="muted">（结果 · 积分榜与赛程）</span></h2>
             <div class="panel">
-                <div class="panel-title">小组赛积分榜 <span class="muted">Group Standings · 前 4 名晋级<a href="playoffs.html">季后赛</a></span></div>
+                <div class="panel-title">常规赛积分榜 <span class="muted">Standings · 前 4 名晋级<a href="playoffs.html">季后赛</a></span></div>
                 <div class="table-responsive" id="standings-wrap">
                     <table class="wikitable striped grouptable">
                         <thead>
@@ -73,7 +76,7 @@
                 <div class="infobox-row"><div class="infobox-label">赛事名称</div><div class="infobox-value">2026 WRL 秋季赛</div></div>
                 <div class="infobox-row"><div class="infobox-label">游戏版本</div><div class="infobox-value" id="meta-patch">7.2（第 1–5 周）<br>7.3（第 6 周起）</div></div>
                 <div class="infobox-row"><div class="infobox-label">参赛队伍</div><div class="infobox-value">8</div></div>
-                <div class="infobox-row"><div class="infobox-label">赛制</div><div class="infobox-value">小组赛双循环 BO3<br>季后赛 BO5<br>双边无畏征召</div></div>
+                <div class="infobox-row"><div class="infobox-label">赛制</div><div class="infobox-value">常规赛双循环 BO3<br>季后赛 BO5<br>双边无畏征召</div></div>
             </div>
         </aside>
     </div>

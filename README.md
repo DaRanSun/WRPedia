@@ -6,8 +6,7 @@
 
 - `teams.html` / `team.html?team=TT` — 战队入口与详情：50 位选手、按实际出场统计主副位置、红蓝方 Ban、队内 MVP、平均时长及赛程
 - `player.html?player=whg-awen` — 独立选手档案：英雄一览、逐局实际分路、选择、胜负与 MVP；点击选手在当前标签页跳转
-- `schedule.html` — 赛程页：赛制说明、小组赛 8 队双循环积分榜、小组赛与季后赛全部比赛及每小局 BP 详情
-- `playoffs.html` — 季后赛页：对阵图（半决赛、冠军决胜、季军争夺战）、晋级队伍与最终名次、季后赛比赛及每小局 BP 详情
+- `schedule.html` / `playoffs.html` — 「赛程」大标签下的两个小标签。常规赛：赛制说明、8 队双循环积分榜、常规赛全部比赛及每小局 BP 详情；季后赛：对阵图（半决赛、冠军决胜、季军争夺战）、晋级队伍与最终名次、季后赛比赛及每小局 BP 详情
 - `stats.html` — 数据统计页：总榜 / 7.2 / 7.3；英雄 BP 梯度、选用/禁用统计、蓝红方胜率、搭档与对手、未上场英雄、比赛时长分布
 - `patches.html` — 版本页：7.2c、7.2d、7.2e、7.3、7.3a 的常规峡谷改动、赛事重点、装备／符文／战场与官方来源
 - `picks.html` — 选用查询：队伍 × 英雄 × 版本交叉筛选，展示所有命中小局的完整 BP、位置、红蓝方、胜负、时长与大场信息
@@ -37,8 +36,8 @@ python -m http.server 8765 --bind 127.0.0.1
 ```text
 WRpedia/
 ├─ index.html              概览页
-├─ schedule.html           赛程页（小组赛 + 季后赛）
-├─ playoffs.html           季后赛页与对阵图
+├─ schedule.html           赛程 · 常规赛小标签
+├─ playoffs.html           赛程 · 季后赛小标签与对阵图
 ├─ stats.html              数据统计页
 ├─ patches.html            版本时间线与改动
 ├─ assets/
@@ -49,7 +48,7 @@ WRpedia/
 ├─ data/
 │  ├─ champions.js / .json 英雄数据（自动生成，勿手改）
 │  ├─ champion-rules.js    赛事启用版本、纯 Ban 英雄分路归属
-│  ├─ schedule.js          赛程数据（队伍、56 场小组赛与季后赛赛程、各轮版本及已录入赛果）
+│  ├─ schedule.js          赛程数据（队伍、56 场常规赛与季后赛赛程、各轮版本及已录入赛果）
 │  ├─ patches.js           版本元信息、7.2c/d/e 改动与赛事重点
 │  └─ patch-7.3.js          7.3 常规峡谷明细与英雄属性附录（版本页加载）
 ├─ admin/                  本地录入后台（不发布，见「录入后台」）
@@ -108,10 +107,10 @@ window.WR_LEAGUE = {
 ## 季后赛
 
 - 季后赛是 `rounds` 中 `stage: "playoffs"` 的一轮，比赛为 `bestOf: 5`。积分榜（`WR.LeagueSummary.standings()`）跳过该轮；数据统计、战队与选手记录、选用查询不作区分，照常按 `rounds[].patch` / `matches[].patch` 归入 7.3 大版本和对应小版本。
-- `rounds[].seeds` 记录各队小组赛排名（`{ "TT": 1, "FP": 2, "RV": 3, "WBG": 4 }`），用于对阵图上的 `#` 排名与半决赛「G1 选边」标记（排名上位的队伍拥有第一局的选边权）。
+- `rounds[].seeds` 记录各队常规赛排名（`{ "TT": 1, "FP": 2, "RV": 3, "WBG": 4 }`），用于对阵图上的 `#` 排名与半决赛「G1 选边」标记（排名上位的队伍拥有第一局的选边权）。
 - `matches[].stage` 为 `semifinal` / `third` / `final`，`label` 是显示名（半决赛 1、季军争夺战、冠军决胜）。决赛日两场的 `opponent1/2` 在半决赛结束前为 `null`，由 `sources: [{ match: "SF1", take: "winner" | "loser" }, …]` 说明来源；页面此时显示「半决赛 1 胜者」等占位。录入后台保存半决赛时会自动写入对应队伍。
 - 季后赛版本确定前 `rounds[].patch` 为空：未开赛的比赛不显示版本，也不产生空的小版本统计列。在后台录入第一场时填写版本，即成为整轮版本，并把 `meta.patch` 末尾的「季后赛待定」替换为实际版本；个别场次不同可单独填写（存为 `matches[].patch`）。若是新的小版本，还需在 `data/patches.js` 补充该版本说明。
-- 赛制文字在 `meta.playoffFormatText`；对阵图由 `assets/js/playoffs.js` 渲染，比赛行与 BP 详情由 `assets/js/match-list.js` 提供，赛程页与季后赛页共用。
+- 赛制文字在 `meta.playoffFormatText`；对阵图由 `assets/js/playoffs.js` 渲染，比赛行与 BP 详情由 `assets/js/match-list.js` 提供，两个小标签页共用。`schedule.html` 只列常规赛各周，`playoffs.html` 只列季后赛；两页的 `data-page` 都是 `schedule`，所以高亮同一个大标签，页面顶部的 `stage-tabs` 导航在两者之间切换。
 
 ## 录入后台
 
@@ -138,7 +137,7 @@ python3 admin/server.py        # Windows：python admin/server.py
 
 ## 统计口径（当前实现）
 
-- 总榜保留所有已录入有效小局；7.2 分榜覆盖第 1–5 周，7.3 分榜覆盖第 6 周起（含季后赛）。积分榜只统计小组赛。英雄详情、分路、队伍、搭档／对手、蓝红方胜率、时长和未选英雄全部使用同一版本范围。没有比赛样本时显示空状态，不把整个英雄池误标为“未选用”。
+- 总榜保留所有已录入有效小局；7.2 分榜覆盖第 1–5 周，7.3 分榜覆盖第 6 周起（含季后赛）。积分榜只统计常规赛。英雄详情、分路、队伍、搭档／对手、蓝红方胜率、时长和未选英雄全部使用同一版本范围。没有比赛样本时显示空状态，不把整个英雄池误标为“未选用”。
 - 版本切换可通过 `stats.html?version=7.2` / `stats.html?version=7.3` 分享，支持刷新与浏览器前进／后退。未提供或无法识别的版本参数默认总榜。
 
 - 英雄选用/禁用按**小局**计数：每小局每个选用英雄计 1 次 Pick、每个禁用英雄计 1 次 Ban；胜方英雄计 1 胜、负方计 1 负。

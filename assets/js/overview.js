@@ -12,8 +12,8 @@
             side(match, 1) + '<span class="overview-vs">VS</span>' + side(match, 2) +
             '<span class="overview-week">' + esc(match.label || round.title.split('（')[0]) + ' →</span></a>').join('') : '<p class="empty-note">当前赛程已全部结束，敬请期待后续比赛。</p>';
         if (WR.LeagueSummary.groupStageComplete()) {
-            document.getElementById('leaders-sub').textContent = '小组赛最终排名前四名';
-            document.getElementById('leaders-note').innerHTML = '小组赛已结束，前四名晋级季后赛。<a href="playoffs.html">查看季后赛对阵图 →</a>';
+            document.getElementById('leaders-sub').textContent = '常规赛最终排名前四名';
+            document.getElementById('leaders-note').innerHTML = '常规赛已结束，前四名晋级季后赛。<a href="playoffs.html">查看季后赛对阵图 →</a>';
         }
         document.getElementById('overview-standings').innerHTML = '<table class="wikitable overview-table"><thead><tr><th>排名 / 战队</th><th>大场</th><th>小局</th></tr></thead><tbody>' + leaders.map((r, i) =>
             '<tr data-overview-team="' + r.team.id + '"><td><a class="overview-rank-team" href="team.html?team=' + r.team.id + '"><span class="overview-rank">' + (i + 1) + '</span>' + WR.teamBadge(r.team.id) + '<b>' + esc(r.team.id) + '</b></a></td><td>' + r.seriesW + '–' + r.seriesL + '</td><td>' + r.gameW + '–' + r.gameL + '</td></tr>').join('') + '</tbody></table>';

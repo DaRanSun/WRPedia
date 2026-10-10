@@ -55,7 +55,8 @@
     function renderMatches() {
         const el = document.getElementById("matchlist-root");
         if (!el) return;
-        const rounds = league.rounds || [];
+        // Playoff rounds have their own sub-tab (playoffs.html).
+        const rounds = (league.rounds || []).filter(function (round) { return !WR.isPlayoffRound(round); });
         if (!rounds.length) {
             el.innerHTML = '<div class="empty-note">暂无赛程数据</div>';
             return;
@@ -69,7 +70,6 @@
             if (!round.matches || !round.matches.length) return;
             html += '<div class="matchlist" id="round-' + WR.escapeHtml(round.id || ri) + '"><div class="matchlist-title"><span>' +
                 WR.escapeHtml(round.title || ("第 " + (ri + 1) + " 轮")) +
-                (WR.isPlayoffRound(round) ? ' <a class="link-chip" href="playoffs.html">对阵图 →</a>' : "") +
                 '</span><span class="muted">' + WR.escapeHtml(round.date || "") + "</span></div>";
             const started = round.matches.some(function (m) { return WR.matchStarted(round, m); });
             const patch = (window.WR_PATCHES || []).find(function (p) { return p.id === round.patch; });
