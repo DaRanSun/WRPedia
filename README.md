@@ -1,6 +1,6 @@
 # WRpedia · 英雄联盟手游（Wild Rift）独立数据站
 
-当前网站版本：**V1.5.0**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
+当前网站版本：**V1.6.0**。更新内容及版本规则见 [CHANGELOG.md](CHANGELOG.md)。
 
 仿 Liquipedia 风格的《英雄联盟手游》赛事数据站。概览展示后续赛程、积分前四和选手 MVP 前五（截止位同分全部展示）。其他页面：
 
