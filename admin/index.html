@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Resolve data/ and assets/ from the project root; admin/ itself is never published. -->
+    <base href="../">
+    <title>录入后台 · WRpedia</title>
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/wrpedia.css">
+    <link rel="stylesheet" href="admin/admin.css">
+</head>
+<body data-page="admin">
+<header class="site-header">
+    <div class="wrap site-header-inner">
+        <div class="brand">
+            <div class="brand-logo">WR</div>
+            <div>
+                <div class="brand-name">WRpedia <span class="tag">· 录入后台</span></div>
+                <div class="brand-sub">本地使用 · 保存写入 data/，发布后更新公网</div>
+            </div>
+        </div>
+        <div class="header-right"><span id="connection" class="connection">正在读取数据…</span><button type="button" class="btn theme-toggle" data-theme-toggle aria-label="切换亮色模式">亮色模式</button></div>
+    </div>
+    <div class="wrap">
+        <nav class="tabs" id="admin-tabs">
+            <a href="admin/#new" data-view="new">录入赛果</a>
+            <a href="admin/#past" data-view="past">修改过往比赛</a>
+            <a href="admin/#players" data-view="players">选手管理</a>
+            <a href="admin/#publish" data-view="publish">发布公网</a>
+        </nav>
+    </div>
+</header>
+
+<main class="wrap page" id="app" aria-live="polite"></main>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="data/champions.js"></script>
+<script src="data/champion-locales.js"></script>
+<script src="data/champion-rules.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="admin/admin.js"></script>
+</body>
+</html>

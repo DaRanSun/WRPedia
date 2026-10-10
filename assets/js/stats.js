@@ -55,8 +55,10 @@
             (round.matches || []).forEach(function (match) {
                 if (version !== "all" && WR.majorPatch(WR.matchPatch(round, match)) !== version) return;
                 const patch = WR.matchPatch(round, match) || "未标注";
-                if (!patchSamples[patch]) patchSamples[patch] = { id: patch, games: 0 };
                 const games = (match.games || []).filter(isPlayedGame);
+                // A scheduled match whose patch is not decided yet (playoffs) must not add an empty patch column.
+                if (!games.length && !WR.matchPatch(round, match)) return;
+                if (!patchSamples[patch]) patchSamples[patch] = { id: patch, games: 0 };
                 if (!games.length) return;
                 const seriesLen = games.length;
                 totalGames += seriesLen;

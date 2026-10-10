@@ -163,6 +163,36 @@
         return !!(round.completed || match.started || match.completed || (match.games || []).length);
     }
 
+    // Playoffs live in the same rounds list (stage: "playoffs"), so statistics need no special handling.
+    function isPlayoffRound(round) { return !!round && round.stage === "playoffs"; }
+
+    function findMatch(id) {
+        for (const round of (LEAGUE && LEAGUE.rounds) || []) {
+            const match = (round.matches || []).find(function (m) { return m.id === id; });
+            if (match) return match;
+        }
+        return null;
+    }
+
+    function seriesScore(match) {
+        const games = (match.games || []).filter(function (g) { return g.winner === 1 || g.winner === 2; });
+        const w1 = games.filter(function (g) { return g.winner === 1; }).length, w2 = games.length - w1;
+        const need = Math.ceil((match.bestOf || 3) / 2);
+        return { w1: w1, w2: w2, need: need, played: (match.games || []).length, winner: w1 >= need ? 1 : w2 >= need ? 2 : 0 };
+    }
+
+    // Team name, or the bracket source ("半决赛 1 胜者") while the opponent is undecided.
+    function opponentLabel(match, index) {
+        const id = match["opponent" + index];
+        if (id) return teamName(id);
+        const source = (match.sources || [])[index - 1], from = source && findMatch(source.match);
+        return from ? (from.label || from.id) + (source.take === "loser" ? " 负者" : " 胜者") : "待定";
+    }
+
+    function matchUrl(round, match) {
+        return (isPlayoffRound(round) ? "playoffs.html" : "schedule.html") + "#match-" + encodeURIComponent(match.id);
+    }
+
     function escapeHtml(s) {
         return String(s == null ? "" : s)
             .replace(/&/g, "&amp;")
@@ -194,6 +224,7 @@
 
     function teamBadge(id, cls) {
         const t = teamById(id);
+        if (id == null) return '<span class="team-badge tbd" title="待定">?</span>';
         if (!t) return '<span class="text-muted">' + escapeHtml(id) + "</span>";
         let hue = 200;
         if (t.color) hue = t.color;
@@ -334,6 +365,11 @@
         championRules: window.WR_CHAMPION_RULES || {},
         patchLink: patchLink,
         matchStarted: matchStarted,
+        isPlayoffRound: isPlayoffRound,
+        findMatch: findMatch,
+        seriesScore: seriesScore,
+        opponentLabel: opponentLabel,
+        matchUrl: matchUrl,
         champions: CHAMPIONS,
         getChampion: getChampion,
         championName: championName,

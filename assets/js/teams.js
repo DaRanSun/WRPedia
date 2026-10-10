@@ -29,8 +29,8 @@
         if (!rows.length) return '';
         return '<h3 class="team-schedule-heading">' + title + '<span>' + rows.length + ' 场</span></h3><div class="team-schedule-list">' + rows.map(function (r) {
             const m = r.match;
-            return '<a class="team-match" href="schedule.html#match-' + esc(m.id) + '"><time>' + esc(m.date) + '<small>' + esc(m.timezone || '') + '</small></time>' +
-                '<span class="team-match-opponent">vs <b>' + esc(r.opponent) + '</b></span><span class="team-match-score ' + (r.finished ? r.wins > r.losses ? 'won' : 'lost' : '') + '">' +
+            return '<a class="team-match" href="' + WR.matchUrl(r.round, m) + '"><time>' + esc(m.date) + '<small>' + esc(m.timezone || '') + '</small></time>' +
+                '<span class="team-match-opponent">vs <b>' + esc(r.opponent) + '</b>' + (m.label ? ' <small>' + esc(m.label) + '</small>' : '') + '</span><span class="team-match-score ' + (r.finished ? r.wins > r.losses ? 'won' : 'lost' : '') + '">' +
                 (r.played ? r.wins + '–' + r.losses : '待赛') + '</span><span class="team-match-patch">' + (r.played ? esc(r.patch) : 'BO' + (m.bestOf || 3)) + '</span><span class="team-match-link">' + (r.played ? '查看 BP →' : '查看赛程 →') + '</span></a>';
         }).join('') + '</div>';
     }

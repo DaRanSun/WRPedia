@@ -793,3 +793,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
     .role-tier-table .champ-icon { width: 20px; height: 20px; }
     .role-score-track { width: 90%; }
 }
+
+/* ---------- playoffs: undecided opponents, match labels, round jump links ---------- */
+.team-badge.tbd { background: var(--surface-3); border: 1px dashed var(--border-strong); color: var(--text-muted); }
+.match-team.tbd .team-name, .overview-team.tbd b { color: var(--text-muted); font-weight: 400; font-style: italic; }
+.match-label { color: var(--text-strong); }
+.round-jump { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 2px; }
+.round-jump a { padding: 3px 10px; border: 1px solid var(--border-strong); border-radius: 3px; background: var(--surface-2); font-size: 12px; }
+.round-jump a:hover { text-decoration: none; background: var(--surface-4); }
+.matchlist { scroll-margin-top: 8px; }
+.team-match-opponent small { color: var(--text-muted); font-size: 11px; margin-left: 4px; }

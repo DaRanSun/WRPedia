@@ -1,0 +1,78 @@
+/* Playoffs page: bracket and seed lists. Uses the tokens from wrpedia.css. */
+.bracket {
+    --bgap: 26px;
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 64px minmax(240px, 1fr);
+    max-width: 900px;
+    column-gap: 0;
+    row-gap: 10px;
+    align-items: stretch;
+    margin: 14px 0 6px;
+}
+.bracket-title { font-weight: 700; color: var(--text-strong); font-size: 14px; }
+.bracket-title small { margin-left: 8px; color: var(--text-muted); font-weight: 400; font-size: 12px; }
+.bracket-semis { display: grid; grid-template-rows: 1fr 1fr; gap: var(--bgap); }
+.bracket-cell, .bracket-final { display: flex; flex-direction: column; justify-content: center; }
+.bracket-final { position: relative; }
+/* Connector: an elbow joining the two semifinal mid-lines, then a stem into the final. */
+.bracket-link { position: relative; }
+.bracket-link .elbow {
+    position: absolute; left: 0; width: 50%;
+    top: calc(25% - var(--bgap) / 4); bottom: calc(25% - var(--bgap) / 4);
+    border: 2px solid var(--border-strong); border-left: 0; border-radius: 0 8px 8px 0;
+}
+.bracket-link .stem { position: absolute; left: 50%; right: 0; top: calc(50% - 1px); border-top: 2px solid var(--border-strong); }
+.bracket-legend { margin: 14px 18px 0 0; color: var(--text-muted); font-size: 12px; line-height: 1.7; align-self: start; }
+.bracket-third { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.bracket-simple { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 14px 0; }
+
+.bracket-match {
+    display: block; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-1);
+    color: var(--text); overflow: hidden;
+}
+.bracket-match:hover { border-color: var(--accent); text-decoration: none; color: var(--text); }
+.bracket-match.final { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.bm-head { display: flex; align-items: center; gap: 8px; padding: 6px 10px; background: var(--surface-3); border-bottom: 1px solid var(--border); font-size: 12px; }
+.bm-head b { color: var(--text-strong); }
+.bm-head span { color: var(--text-muted); }
+.bm-head em { margin-left: auto; font-style: normal; color: var(--text-muted); }
+.bracket-match.live .bm-head em { color: var(--warn-text); }
+.bracket-match.done .bm-head em { color: var(--accent); }
+.bm-team { display: flex; align-items: center; gap: 8px; padding: 8px 10px; min-height: 48px; }
+.bm-team + .bm-team { border-top: 1px solid var(--border); }
+.bm-seed { width: 22px; color: var(--text-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.bm-name { font-weight: 700; color: var(--text-strong); font-size: 15px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bm-tag { border: 1px solid var(--border-strong); border-radius: 3px; padding: 0 5px; font-size: 10px; color: var(--text-muted); white-space: nowrap; }
+.bm-score { margin-left: auto; min-width: 22px; text-align: center; font-size: 19px; font-weight: 800; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.bm-team.won { background: var(--bg-up); }
+.bm-team.won .bm-score { color: var(--accent-strong); }
+.bm-team.lost .bm-name, .bm-team.lost .bm-score { color: var(--text-muted); }
+.bm-team.tbd .bm-name { color: var(--text-muted); font-weight: 400; font-size: 13px; font-style: italic; }
+.bracket-champion {
+    position: absolute; left: 0; right: 0; top: calc(50% + 68px); display: flex; align-items: center; gap: 8px;
+    padding: 6px 10px; border: 1px solid var(--accent); border-radius: 6px; background: var(--surface-2); color: var(--text-strong);
+}
+.bracket-champion span { color: var(--accent-strong); font-weight: 800; letter-spacing: 2px; }
+
+.playoff-aside { display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+.infobox-header .muted { display: block; font-weight: 400; font-size: 11px; color: var(--text-muted); }
+.seed-row { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-bottom: 1px solid var(--border); color: var(--text); }
+.seed-row:last-child { border-bottom: 0; }
+.seed-row:hover { background: var(--surface-2); text-decoration: none; }
+.seed-row b { color: var(--text-strong); }
+.seed-row > span:last-child { margin-left: auto; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.seed-row .place { width: 34px; color: var(--accent-strong); font-weight: 700; margin-left: 0; }
+.seed-row .team-logo, .bm-team .team-logo { width: 34px; height: 28px; }
+
+@media (max-width: 760px) {
+    .bracket { grid-template-columns: 1fr; row-gap: 10px; }
+    .bracket-link, .bracket-gap { display: none; }
+    /* One column: read down the bracket in playing order. */
+    .bracket-title.for-semis { order: 1; }
+    .bracket-semis { order: 2; gap: 10px; }
+    .bracket-title.for-final { order: 3; margin-top: 8px; }
+    .bracket-final { order: 4; }
+    .bracket-third { order: 5; margin-top: 8px; }
+    .bracket-legend { order: 6; margin: 0; }
+    .bracket-champion { position: static; margin-top: 8px; }
+}

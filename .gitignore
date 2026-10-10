@@ -2,6 +2,9 @@
 .netlify/
 dist/
 
+# Local admin backups of data files (admin/server.py).
+/admin/backups/
+
 # Historical screenshots; no longer used by the site.
 /wrl/
 

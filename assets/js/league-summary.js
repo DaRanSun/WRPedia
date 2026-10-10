@@ -3,7 +3,8 @@
     const WR = window.WR;
     function standings() {
         const rows = Object.fromEntries((WR.league.teams || []).map(team => [team.id, { team, seriesW: 0, seriesL: 0, gameW: 0, gameL: 0 }]));
-        WR.league.rounds.forEach(round => round.matches.forEach(match => {
+        // Group-stage table: playoff series never change the standings.
+        WR.league.rounds.filter(round => !WR.isPlayoffRound(round)).forEach(round => round.matches.forEach(match => {
             const games = (match.games || []).filter(g => [1, 2].includes(g.winner));
             const wins = games.filter(g => g.winner === 1).length, losses = games.length - wins;
             [1, 2].forEach(index => {
@@ -17,6 +18,9 @@
         return Object.values(rows).sort((a, b) => b.seriesW - a.seriesW || (b.seriesW - b.seriesL) - (a.seriesW - a.seriesL) ||
             (b.gameW - b.gameL) - (a.gameW - a.gameL) || b.gameW - a.gameW || a.team.name.localeCompare(b.team.name, 'zh'));
     }
+    function groupStageComplete() {
+        return WR.league.rounds.filter(round => !WR.isPlayoffRound(round)).every(round => round.matches.every(match => WR.seriesScore(match).winner));
+    }
     function upcoming(limit = 6) {
         return WR.league.rounds.flatMap(round => round.matches.map(match => ({ round, match })))
             .filter(({ match }) => !(match.games || []).some(g => [1, 2].includes(g.winner)))
@@ -29,5 +33,5 @@
         const cutoff = players[Math.min(limit, players.length) - 1];
         return cutoff ? players.filter(p => p.mvp >= cutoff.mvp).map(p => ({ ...p, rank: players.findIndex(v => v.mvp === p.mvp) + 1 })) : [];
     }
-    WR.LeagueSummary = Object.freeze({ standings, upcoming, topMvps });
+    WR.LeagueSummary = Object.freeze({ standings, groupStageComplete, upcoming, topMvps });
 })();

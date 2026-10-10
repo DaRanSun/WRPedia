@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playoffs · WRpedia 2026 秋季赛</title>
+    <script src="assets/js/theme.js"></script>
+    <link rel="stylesheet" href="assets/css/wrpedia.css">
+    <link rel="stylesheet" href="assets/css/playoffs.css">
+</head>
+<body data-page="playoffs">
+<header class="site-header">
+    <div class="wrap site-header-inner">
+        <div class="brand">
+            <div class="brand-logo">WR</div>
+            <div>
+                <div class="brand-name">WRpedia <span class="tag">· 英雄联盟手游</span></div>
+                <div class="brand-sub">Wild Rift 非官方数据站 · 2026 秋季赛</div>
+            </div>
+        </div>
+        <div class="header-right"><span>独立个人数据站<br>赛果由站主手动录入</span><button type="button" class="btn theme-toggle" data-theme-toggle aria-label="切换亮色模式">亮色模式</button></div>
+    </div>
+    <div class="wrap">
+        <nav class="tabs">
+            <a href="index.html" data-page="overview">Overview / 概览</a>
+            <a href="schedule.html" data-page="schedule">Schedule / 赛程</a>
+            <a href="playoffs.html" data-page="playoffs">Playoffs / 季后赛</a>
+            <a href="teams.html" data-page="teams">Teams / 战队</a>
+            <a href="picks.html" data-page="picks">Pick History / 选用查询</a>
+            <a href="stats.html" data-page="stats">Statistics / 数据</a>
+            <a href="patches.html" data-page="patches">Patches / 版本</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrap page">
+    <div class="page-title">
+        <h1>Playoffs</h1>
+        <div class="sub">2026 英雄联盟手游超级联赛秋季赛 · 季后赛（小组赛前 4 名 · BO5 · 双边无畏征召）</div>
+    </div>
+
+    <div class="content-grid">
+        <div class="main-col">
+            <h2 class="section">Bracket <span class="muted">（对阵图）</span></h2>
+            <div id="bracket-root"></div>
+
+            <h2 class="section">Format <span class="muted">（赛制）</span></h2>
+            <div class="panel"><div class="panel-body" id="playoff-format"></div></div>
+
+            <h2 class="section">赛程与 BP <span class="muted">Matches · 点击比赛展开每小局 BP</span></h2>
+            <div id="playoff-matches"></div>
+        </div>
+
+        <aside class="playoff-aside">
+            <div class="infobox">
+                <div class="infobox-header">季后赛信息</div>
+                <div class="infobox-row"><div class="infobox-label">比赛日期</div><div class="infobox-value">10 月 17 日 – 18 日</div></div>
+                <div class="infobox-row"><div class="infobox-label">参赛队伍</div><div class="infobox-value">4（小组赛前 4 名）</div></div>
+                <div class="infobox-row"><div class="infobox-label">赛制</div><div class="infobox-value">BO5 · 双边无畏征召</div></div>
+                <div class="infobox-row"><div class="infobox-label">游戏版本</div><div class="infobox-value" id="playoff-patch">待定</div></div>
+            </div>
+            <div class="infobox">
+                <div class="infobox-header">晋级队伍 <span class="muted">小组赛排名 · 大场战绩</span></div>
+                <div id="playoff-seeds"></div>
+            </div>
+            <div class="infobox" id="playoff-placements" hidden>
+                <div class="infobox-header">最终名次</div>
+                <div id="playoff-placement-list"></div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer class="footer">
+    <span class="site-release" data-site-version></span><br>
+    WRpedia 是非官方爱好者站点，与 Riot Games 及 Liquipedia 无关。<br>
+    英雄头像与图片版权归 Riot Games 所有，数据仅用于个人学习与展示。
+</footer>
+
+<script src="data/champions.js"></script>
+<script src="data/champion-locales.js"></script>
+<script src="data/schedule.js"></script>
+<script src="data/patches.js"></script>
+<script src="data/patch-7.3a.js"></script>
+<script src="data/champion-rules.js"></script>
+<script src="data/players.js"></script>
+<script src="data/site.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/league-summary.js"></script>
+<script src="assets/js/match-list.js"></script>
+<script src="assets/js/playoffs.js"></script>
+</body>
+</html>

@@ -299,5 +299,23 @@ window.WR_PLAYERS = [
     "teamId": "ACE",
     "name": "TenMiss",
     "role": "bot"
+  },
+  {
+    "id": "fp-y1ze",
+    "teamId": "FP",
+    "name": "Y1ze",
+    "role": "top"
+  },
+  {
+    "id": "tt-geqian",
+    "teamId": "TT",
+    "name": "Geqian",
+    "role": "support"
+  },
+  {
+    "id": "ss1-once",
+    "teamId": "SS1",
+    "name": "Once",
+    "role": "jungle"
   }
 ];

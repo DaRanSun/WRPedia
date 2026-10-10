@@ -64,10 +64,13 @@ check("142 champions", window.WR_CHAMPIONS.length === 142);
 check("8 teams", league.teams.length === 8);
 check("demo flag is false", league.meta.demo === false);
 
-const rounds = league.rounds;
+// Group stage only: playoff rounds (stage "playoffs") follow the bracket, not the round robin.
+const rounds = league.rounds.filter(r => r.stage !== "playoffs");
 const matches = rounds.flatMap(r => r.matches);
 check("7 regular rounds", rounds.length === 7);
 check("56 regular matches", matches.length === 56);
+const playoffMatches = league.rounds.filter(r => r.stage === "playoffs").flatMap(r => r.matches);
+check("playoff matches are BO5 and name their bracket stage", playoffMatches.every(m => m.bestOf === 5 && ["semifinal", "third", "final"].includes(m.stage)));
 
 const pairCounts = {};
 for (const m of matches) {
@@ -82,10 +85,10 @@ check("28 unordered pairs", pairKeys.length === 28);
 check("every pair meets exactly twice", pairKeys.every(k => pairCounts[k].total === 2));
 check("every pair has home and away legs", pairKeys.every(k => pairCounts[k].ab === 1 && pairCounts[k].ba === 1));
 
-// Recorded results: weeks 1–5 and the first five series of week 6.
+// Recorded results: the whole group stage.
 const slugs = new Set(window.WR_CHAMPIONS.map(c => c.slug));
 const played = matches.filter(m => (m.games || []).length > 0);
-check("48 matches filled with games (weeks 1–6 complete)", played.length === 48);
+check("56 matches filled with games (group stage complete)", played.length === 56);
 check("every game has 5+5 picks and 5+5 bans, valid slugs", played.every(m =>
     m.games.every(g =>
         [g.team1, g.team2].every(t =>
@@ -171,6 +174,7 @@ load("assets/js/common.js");
 load("assets/js/bp-tiers.js");
 load("assets/js/stats.js");
 load("assets/js/league-summary.js");
+load("assets/js/match-list.js");
 load("assets/js/schedule.js");
 
 // ---------- run page scripts ----------

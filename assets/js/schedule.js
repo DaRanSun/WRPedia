@@ -52,107 +52,6 @@
         el.innerHTML = html;
     }
 
-    function fearlessIssues(match) {
-        const seen = {};
-        const issues = [];
-        (match.games || []).forEach(function (game, gi) {
-            if (!game.team1 || !game.team2) return;
-            [game.team1, game.team2].forEach(function (side) {
-                (side.picks || []).forEach(function (slug) {
-                    if (seen[slug] != null) {
-                        issues.push("Game " + (gi + 1) + " 重复选用 " + WR.escapeHtml(slug) +
-                            "（此前在 Game " + (seen[slug] + 1) + " 已选用）");
-                    } else {
-                        seen[slug] = gi;
-                    }
-                });
-            });
-        });
-        return issues;
-    }
-
-    function gameBlock(match, game, gi) {
-        if (!game.team1 || !game.team2) return '<div class="empty-note">Game ' + (gi + 1) + " 暂无数据</div>";
-        const t1 = game.team1, t2 = game.team2;
-        const t1Blue = t1.side === "blue";
-        const sides = [
-            { teamId: match.opponent1, data: t1, blue: t1Blue },
-            { teamId: match.opponent2, data: t2, blue: !t1Blue }
-        ].sort((a, b) => Number(b.blue) - Number(a.blue));
-        const winnerId = game.winner === 1 ? match.opponent1 : game.winner === 2 ? match.opponent2 : null;
-
-        let html = '<div class="game-block">';
-        html += '<div class="game-header"><span>Game ' + (gi + 1) + "</span>" +
-            (game.length ? "<span>时长 " + WR.escapeHtml(game.length) + "</span>" : "") +
-            (winnerId ? '<span class="strong">胜者：' + WR.escapeHtml(WR.teamName(winnerId)) + "</span>" : '<span class="text-muted">未结束</span>') +
-            (WR.gameMvpLabel(game) ? '<span>MVP：' + WR.escapeHtml(WR.gameMvpLabel(game)) + '</span>' : '') + "</div>";
-        html += '<div class="game-sides">';
-        sides.forEach(function (s) {
-            const boxCls = s.blue ? "blue" : "red";
-            const sideLabel = s.blue ? "蓝方" : "红方";
-            html += '<div class="side-box ' + boxCls + '">' +
-                '<div class="side-label"><span class="strong">' + WR.escapeHtml(WR.teamName(s.teamId)) + "（" + sideLabel + "）</span></div>" +
-                WR.draftSideHtml(s.data);
-            html += "</div>";
-        });
-        html += '</div>' + WR.gameNotesHtml(game) + '</div>';
-        return html;
-    }
-
-    function matchRow(round, match) {
-        const games = (match.games || []).filter(function (g) { return g.winner === 1 || g.winner === 2; });
-        const w1 = games.filter(function (g) { return g.winner === 1; }).length;
-        const w2 = games.length - w1;
-        const finished = games.length > 0;
-        const winner1 = finished && w1 > w2;
-        const winner2 = finished && w2 > w1;
-        const dots = (match.games || []).map(function (g, i) {
-            if (g.winner !== 1 && g.winner !== 2) return '<span class="game-dot" title="Game ' + (i + 1) + " 未结束\">–</span>";
-            const cls = g.winner === 1 ? "win" : "lose";
-            return '<span class="game-dot ' + cls + '" title="Game ' + (i + 1) + '">' + g.winner + "</span>";
-        }).join("");
-
-        const mvp = match.mvp && match.mvp.length ? "MVP: " + WR.escapeHtml(match.mvp.join(", ")) : "";
-        let links = "";
-        if (match.vod) links += '<a class="link-chip" href="' + WR.escapeHtml(match.vod) + '" target="_blank" rel="noopener">VOD</a>';
-        if (match.youtube) links += '<a class="link-chip" href="' + WR.escapeHtml(match.youtube) + '" target="_blank" rel="noopener">YouTube</a>';
-        if (match.twitch) links += '<a class="link-chip" href="' + WR.escapeHtml(match.twitch) + '" target="_blank" rel="noopener">Twitch</a>';
-
-        let html = '<div class="match-row" id="match-' + WR.escapeHtml(match.id) + '" data-match="' + WR.escapeHtml(match.id) + '">';
-        html += '<div class="match-date">' + WR.escapeHtml(match.date || round.date || "") +
-            (match.timezone ? "<br><span class='text-muted'>" + WR.escapeHtml(match.timezone) + "</span>" : "") +
-            (WR.matchStarted(round, match) ? '<div>' + WR.patchLink(WR.matchPatch(round, match)) + '</div>' : '') + "</div>";
-        html += '<div class="match-team right' + (winner1 ? " winner" : "") + '"><span class="team-name">' +
-            WR.escapeHtml(WR.teamName(match.opponent1)) + "</span>" + WR.teamBadge(match.opponent1) + "</div>";
-        html += '<div class="match-score"><div class="score">' +
-            (finished
-                ? '<span class="' + (winner1 ? "" : "loser") + '">' + w1 + "</span>:<span class=\"" + (winner2 ? "" : "loser") + '">' + w2 + "</span>"
-                : '<span class="text-muted">' + (round.completed || match.completed ? '待录入' : 'vs') + '</span>') +
-            '</div><div class="bo">Bo' + (match.bestOf || 3) + "</div>" +
-            (dots ? '<div class="match-games">' + dots + "</div>" : "") + "</div>";
-        html += '<div class="match-team' + (winner2 ? " winner" : "") + '">' + WR.teamBadge(match.opponent2) +
-            '<span class="team-name">' + WR.escapeHtml(WR.teamName(match.opponent2)) + "</span></div>";
-        html += '<div class="match-actions">' +
-            (mvp ? '<span class="link-chip" title="' + mvp + '">' + mvp + "</span>" : "") +
-            links +
-            (match.games && match.games.length ? '<button class="btn accent" data-toggle-details>详情</button>' : "") +
-            "</div>";
-
-        if (match.games && match.games.length) {
-            html += '<div class="match-details">';
-            const issues = fearlessIssues(match);
-            if (issues.length) {
-                html += '<div class="notice warn">⚠ 双边无畏征召校验：<br>' + issues.join("<br>") + "</div>";
-            }
-            match.games.forEach(function (g, gi) {
-                html += gameBlock(match, g, gi);
-            });
-            html += "</div>";
-        }
-        html += "</div>";
-        return html;
-    }
-
     function renderMatches() {
         const el = document.getElementById("matchlist-root");
         if (!el) return;
@@ -162,11 +61,15 @@
             return;
         }
 
-        let html = "";
+        const shown = rounds.filter(function (round) { return round.matches && round.matches.length; });
+        let html = '<nav class="round-jump" aria-label="跳转到轮次">' + shown.map(function (round) {
+            return '<a href="#round-' + WR.escapeHtml(round.id) + '">' + WR.escapeHtml((round.title || round.id).split("（")[0]) + "</a>";
+        }).join("") + "</nav>";
         rounds.forEach(function (round, ri) {
             if (!round.matches || !round.matches.length) return;
-            html += '<div class="matchlist"><div class="matchlist-title"><span>' +
+            html += '<div class="matchlist" id="round-' + WR.escapeHtml(round.id || ri) + '"><div class="matchlist-title"><span>' +
                 WR.escapeHtml(round.title || ("第 " + (ri + 1) + " 轮")) +
+                (WR.isPlayoffRound(round) ? ' <a class="link-chip" href="playoffs.html">对阵图 →</a>' : "") +
                 '</span><span class="muted">' + WR.escapeHtml(round.date || "") + "</span></div>";
             const started = round.matches.some(function (m) { return WR.matchStarted(round, m); });
             const patch = (window.WR_PATCHES || []).find(function (p) { return p.id === round.patch; });
@@ -178,22 +81,12 @@
                 html += '<p class="pending-results">本周已完赛，部分赛果待录入；统计仅包含已录入的小局。</p>';
             }
             round.matches.forEach(function (m) {
-                html += matchRow(round, m);
+                html += WR.MatchList.matchRow(round, m);
             });
             html += "</div>";
         });
         el.innerHTML = html;
-
-        el.querySelectorAll(".match-row").forEach(function (row) {
-            row.addEventListener("click", function (e) {
-                if (e.target.closest("a")) return;
-                if (e.target.closest("[data-toggle-details]")) {
-                    row.classList.toggle("open");
-                    return;
-                }
-                if (row.querySelector(".match-details")) row.classList.toggle("open");
-            });
-        });
+        WR.MatchList.bind(el);
     }
 
     function renderMeta() {
@@ -239,12 +132,5 @@
         renderFormat();
         renderStandings();
         renderMatches();
-        function revealMatch() {
-            const target = document.getElementById(window.location.hash.slice(1));
-            if (target && target.classList.contains('match-row')) {
-                target.classList.add('open'); target.scrollIntoView({ block: 'start' });
-            }
-        }
-        if (window.location) { revealMatch(); window.addEventListener('hashchange', revealMatch); }
     });
 })();

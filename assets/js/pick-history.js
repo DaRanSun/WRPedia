@@ -38,7 +38,7 @@
         const match = record.match, game = record.game, esc = WR.escapeHtml;
         const score = [1, 2].map(index => (match.games || []).filter(g => g.winner === index).length).join("–");
         let html = '<article class="pick-game" data-match="' + esc(match.id) + '" data-game="' + (record.gameIndex + 1) + '">' +
-            '<header class="pick-game-heading"><div><span class="eyebrow">' + esc(record.round.title) + '</span>' +
+            '<header class="pick-game-heading"><div><span class="eyebrow">' + esc(record.round.title) + (match.label ? ' · ' + esc(match.label) : '') + '</span>' +
             '<h2>' + esc(WR.teamName(match.opponent1)) + ' <span>' + score + '</span> ' + esc(WR.teamName(match.opponent2)) + '</h2>' +
             '<span class="text-muted">' + esc(match.date || record.round.date || '') + (match.timezone ? ' · ' + esc(match.timezone) : '') + '</span></div>' +
             '<div class="pick-game-context">' + WR.patchLink(record.patch) + '<span class="pick-outcome ' + (record.won ? 'won' : 'lost') + '">' +
