@@ -55,7 +55,7 @@ for (const result of [WR.computeStats(), stats]) for (const s of Object.values(r
 }
 const patch = ctx.window.WR_PATCHES.find(p => p.id === '7.3a');
 assert.equal(patch.major, '7.3'); assert.equal(patch.releaseDate, '2026-09-29');
-assert.equal(patch.weeks, '第 7 周'); assert.equal(patch.postseason, '季后赛版本待定');
+assert.equal(patch.weeks, '第 7 周'); assert.equal(patch.status, '已采用'); assert.equal(patch.postseason, undefined);
 assert.equal(patch.champions.length, 12);
 assert.deepEqual(Array.from(patch.champions.filter(c => c.core), c => c.slug).sort(), ['caitlyn', 'hwei', 'malphite', 'senna', 'syndra']);
 assert.deepEqual(Array.from(patch.sections, s => s.entries.length), [4, 3]);
